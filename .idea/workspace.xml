@@ -21,8 +21,8 @@
         <entry file="file://$PROJECT_DIR$/07-CSS预处理器/Css预处理器.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="346">
-                <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <first_editor relative-caret-position="162">
+                <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -41,6 +41,9 @@
       <find>折行</find>
       <find>清除浮动</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -97,11 +100,12 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="296" />
-    <option name="y" value="16" />
+    <option name="x" value="306" />
+    <option name="y" value="23" />
     <option name="width" value="1042" />
     <option name="height" value="680" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -114,16 +118,6 @@
             <path>
               <item name="CSS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-              <item name="07-CSS预处理器" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-              <item name="md" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,12 +192,12 @@
       <workItem from="1528421664298" duration="173000" />
       <workItem from="1528438264479" duration="14328000" />
       <workItem from="1528532195649" duration="9375000" />
-      <workItem from="1528724867259" duration="350000" />
+      <workItem from="1528724867259" duration="591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72555000" />
+    <option name="totallyTimeSpent" value="72796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,18 +209,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="621" y="11" width="1042" height="680" extended-state="0" />
-    <editor active="true" />
+    <frame x="306" y="23" width="1042" height="680" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.482821" weight="0.21539961" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.482821" visible="true" weight="0.21539961" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290441" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" sideWeight="0.517179" side_tool="true" weight="0.21539961" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -596,8 +589,8 @@
     <entry file="file://$PROJECT_DIR$/07-CSS预处理器/Css预处理器.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="346">
-            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <first_editor relative-caret-position="162">
+            <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>

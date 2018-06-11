@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .left {
+            background: red;
+        }
+
+        .right {
+            background: blue;
+        }
+
+        table {
+            width: 800px;
+            height: 200px;
+            /*设置表的边框:collapse： 相邻边被合并*/
+            /*文字表现为左右居中*/
+            border-collapse: collapse;
+        }
+
+        .table {
+            margin-top: 20px;
+            display: table;
+            width: 800px;
+            height: 200px;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+
+        .table-cell {
+            vertical-align: middle;
+            display: table-cell;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="left">左</td>
+        <td class="right">右</td>
+    </tr>
+</table>
+
+<!--设定一个元素,让它长得像表格-->
+<div class="table">
+    <!--一行-->
+    <div class="table-row">
+        <!--单元格-->
+        <div class="left table-cell">
+            左
+        </div>
+        <div class="right table-cell">
+            右
+        </div>
+    </div>
+</div>
+</body>
+</html>

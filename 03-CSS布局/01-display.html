@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .block{
+            height:200px;
+            background:red;
+            /*修改对齐方式*/
+            vertical-align:bottom;
+        }
+        .inline{
+            display: inline;
+            background: green;
+            vertical-align:bottom;
+        }
+        .inline-block{
+            display: inline-block;
+            width:200px;
+            height:100px;
+            background:blue;
+            vertical-align:bottom;
+        }
+    </style>
+</head>
+<body>
+<!--block元素有独立的宽高,默认会独占一行的.-->
+    <div class="block">
+        block
+    </div>
+<!--inline一般是文本内容,不会独占一行. 不能设置宽高-->
+<div class="inline">inline</div>
+    <div class="inline">inline</div>
+    <!--inline-block对内表现为block,可以有宽高,对外表现为inline,与其他元素排在同一行.-->
+    <div class="inline-block">inline-block</div>
+</body>
+</html>

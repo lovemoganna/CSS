@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background:red;
+        width:400px;
+        margin:20px;
+        /*高度不够的情况下会造成高度崩塌,慢慢调节这个实例就会发现*/
+        /*height:200px;*/
+
+        /*元素超出的时候,让其自动滚动.*/
+        /*overflow: auto;*/
+    }
+    .p1{
+        background:green;
+        /*浮动于左侧,不会对其他的文档流造成影响,但会其他元素的本文造成影响*/
+        float:left;
+        width:200px;
+        height:50px;
+    }
+    /*伪元素*/
+    .container2::after{
+        content: 'aaa';
+        /*保证这些元素的左右两边都是干净的,没有其他元素.*/
+        clear:both;
+        /*块级元素可以设置宽高*/
+        display: block;
+        /*隐藏aaa*/
+        visibility: hidden;
+        /*直接把后面的高度设置为0*/
+        height:0;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <span class="p1">
+            float
+        </span>
+        <!--尽管float没有占据p2的空间,但是把p2的文字排挤出去了.看看效果就知道-->
+        <div class="p2">
+            很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字
+        </div>
+    </div>
+
+    <div class="container container2">
+        <!--元素宽度能保证的情况下,float尽量靠上,尽量靠左,宽度不够,会往下掉-->
+        <span>写几个字</span>
+        <span class="p1">
+            float
+        </span>
+        <span class="p1">
+            float
+        </span>
+    </div>
+
+    <div class="container" style="height:200px;background:blue;">
+        <div>第1行</div>
+        <div>第2行</div>
+        <div>第3行</div>
+    </div>
+</body>
+</html>

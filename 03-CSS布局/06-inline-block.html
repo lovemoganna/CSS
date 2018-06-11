@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width:800px;
+            height:200px;
+            /*如果把这几个类选择器的字体大小都规避掉,那么就会出现间隙.或者并不排列在一行.*/
+            font-size:0;
+        }
+        .left{
+            /*在里面设置回来,字体就出现了*/
+            font-size:14px;
+            background:red;
+            /*要是inline-block,就可以把它想象成一个文字.*/
+            /*既然这样我们就可以把所有的字体大小设置为0,这样就不会存在间隙问题了.*/
+            display: inline-block;
+            width:200px;
+            height:200px;
+        }
+        .right{
+            font-size:14px;
+            background:blue;
+            display: inline-block;
+            width:600px;
+            height:200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            左
+            <!--出现间隙的原因就是这有一段空白.-->
+        </div><div class="right">
+            右
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fonts</title>
+    <style>
+        body{
+            /*等宽字体*/
+            /*monaco只能设置英文,所以中文会找默认字体来渲染*/
+             /*font-family: "monaco";*/
+             /*font-family: "monaco", "PingFang SC"; */
+        /*系统找不到这些字体,就会选择设置的字体来进行渲染,再找不到就用系统默认的字体.*/
+        font-family: "aaaaa", "monaco", "PingFang SC";
+        }
+        .chinese{
+            /*一般我们在mac平台下设置"PingFang SC",在win环境下设置"Microsoft Yahei",不知道就设置monospace.*/
+            font-family: "PingFang SC", "Microsoft Yahei", monospace;
+             font-family: "Microsoft Yahei", serif;
+            /* font-family: "serif"; */
+        }
+        .weight{
+            font-weight: bold;
+            font-weight: bolder;
+            font-weight: lighter;
+            font-weight: normal;
+            font-weight: 100;
+        }
+        @font-face {
+            font-family: "IF";
+            src: url("./IndieFlower.ttf");
+        }
+        .custom-font{
+            font-family: IF;
+        }
+    </style>
+</head>
+<body class="body" id="body">
+    Hello world 你好，世界
+    <div class="chinese">你好</div>
+    <!-- <div class="weight">你好 Hello World</div> -->
+    <div class="custom-font">你好 Hello World</div>
+</body>
+</html>

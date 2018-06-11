@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>background</title>
+    <style>
+        .c1{
+            /*常规情况下是平铺的*/
+            height:900px;
+            background:red url(./test.png);
+            /*但是我们不想要平铺，所以设置为no-repeat*/
+            /*或者选择平铺的方向:repeat-x*/
+            background-repeat: no-repeat;
+            /*背景图在顶部中间出现*/
+             /*background-position: center top;*/
+            /*具体的位置*/
+             background-position: 20px 30px;
+            /*指定背景图的大小*/
+             background-size:100px 50px;
+        }
+        .c2{
+            width:20px;
+            height:20px;
+            /*给c2基于基线添加外轮廓200px*/
+            margin-bottom: 200px;
+            background:url(./test_bg.png) no-repeat;
+            background-position: -15px -5px;
+            background-size: 250px 108px;
+        }
+        .c3{
+            width:20px;
+            height:20px;
+            background:url(./test_bg.png) no-repeat;
+            background-position: -169px -23px;
+            background-size: 250px 108px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="c1">-->
+
+    <!--</div>-->
+    <div class="c2">
+
+    </div>
+    <div class="c3">
+
+    </div>
+</body>
+</html>

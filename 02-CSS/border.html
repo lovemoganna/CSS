@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>border</title>
+</head>
+<body>
+    <!--<div class="c1">-->
+
+    <!--</div>-->
+    <div class="c2">
+
+    </div>
+    <div class="c3">
+
+    </div>
+</body>
+</html>
+<style>
+    .c1{
+        width:400px;
+        height: 200px;
+        /*线性框*/
+        border: 1px solid red;
+        /* border:5px solid red; */
+        /*实线框*/
+        /*border:5px dotted red;*/
+        /*虚线框*/
+        /*border:5px dashed red;*/
+    }
+    .c2{
+        width:400px;
+        height: 200px;
+        /*直接指定30px*/
+        /*border-width: 30px;*/
+        /*透明*/
+        border:30px solid transparent;
+        /*按整数填充*/
+        border-image:url(./border.png) 30 round;
+        /*按方块填充*/
+        /*border-image:url(./border.png) 30 repeat;*/
+        /*border-image:url(./border.png) 30;*/
+    }
+    .c3{
+        width:0px;
+        height: 200px;
+        border-bottom:30px solid red;
+        /*基于右侧蓝色边框*/
+         border-right:30px solid blue;
+        /*基于左侧线性透明*/
+        border-left:30px solid transparent;
+        /*基于右侧线性透明*/
+        border-right:30px solid transparent;
+    }
+</style>

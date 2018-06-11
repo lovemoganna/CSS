@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .container{
+            width:800px;
+            height:200px;
+            display: flex;
+            border:1px solid black;
+        }
+        .flex1{
+            background:red;
+            /*要固定宽度*/
+            width:50px;
+            flex:none;
+        }
+        .flex2{
+            background:red;
+            margin:5px;
+            flex:2;
+        }
+        .flex{
+            background:red;
+            margin:5px;
+            /*占一份flex*/
+            flex:1
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="flex1">
+            flex
+        </div>
+        <div class="flex2">
+            flex
+        </div>
+        <div class="flex">
+            flex
+        </div>
+        <div class="flex">
+            flex
+        </div>
+        <div class="flex">
+            flex
+        </div>
+    </div>
+</body>
+</html>

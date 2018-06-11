@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>default style</title>
+    <!--有争议的写法:所有的边距都初始化了.-->
+    <!--主要就是可能会带来性能的问题*代表所有标签,一个个去查找的时候,就会变慢-->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div>DIV元素</div>
+    <ul>
+        <li>LI元素</li>
+        <li>LI元素</li>
+    </ul>
+</body>
+</html>

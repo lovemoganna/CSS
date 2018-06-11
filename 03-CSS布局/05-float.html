@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width:800px;
+            height:200px;
+        }
+        .left{
+            background:red;
+            /*使用这种可以*/
+             float:left;
+            /*100%是相对于body的*/
+             /*height:100%;*/
+            width:200px;
+            /*使用就近原则也可以,同时也会脱离文档流*/
+            /*position: absolute;*/
+            height:200px;
+        }
+        .right{
+            background:blue;
+            /*相当于把左边的给空出来,正好把文本显示出来,此时不用管absolute带来的脱离文档流的问题了.*/
+            /*margin-left: 200px;*/
+            /*要想移动文字,就可以添加填充padding了*/
+            /*padding-left:200px;*/
+            float:right;
+            width:200px;
+            height:100%;
+        }
+        .middle{
+            /*左右各空出200px;*/
+            margin-left:200px;
+            margin-right:200px;
+            padding-left: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            左
+        </div>
+        <div class="right">
+            右
+        </div>
+        <div class="middle">
+            中间
+        </div>
+    </div>
+</body>
+</html>

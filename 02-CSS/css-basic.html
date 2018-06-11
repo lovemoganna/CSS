@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>basic</title>
+    <style>
+        body{
+            padding: 10px;
+            font-size: 14px;
+            background:red; 
+        }
+        /*这个选择器会叠加到上面的选择器,因为带class,权重会高一些.*/
+        body.body{
+            font-size: 20px;
+            background: red;
+        }
+        /*它的权重会更高,会叠加在最上面*/
+        #body{
+            background: blue;
+        }
+    </style>
+</head>
+<body class="body" id="body">
+    Hello CSS!
+</body>
+</html>

@@ -1,0 +1,35 @@
+//引入est所有的的文件
+@import "est/all";
+//支持IE7
+@support-ie-version: 7;
+@use-autoprefixer: false;
+//声明进行全局样式重置
+.global-reset();
+.box{
+    .inline-block();//调用inline-block这个mixin
+    .opacity(60); //设置为半透明
+    height: 100px;
+    background: green;
+    margin:10px;
+}
+.left{
+    float:left;
+    .clearfix();//清除浮动
+}
+
+
+.row{
+    .make-row(); //变成一行
+    .col{
+        .make-column(1/4);//占一列,总共4列
+        background:red;
+        height: 100px;
+    }
+}
+//三角形
+.my-triangle{
+     margin:100px;
+     width:100px;
+     height:200px;
+     border: 1px solid red;
+}

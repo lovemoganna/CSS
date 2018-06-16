@@ -1,0 +1,14 @@
+//不会做任何合并,只能一个一个区加载,会增加HTTP连接数,会造成性能问题.
+//less预处理在经过模块化整合,编译完毕后会把他们整合在一个CSS文件里面.
+
+//预处理器是可以跨文件使用的.
+@import "./6-import-variable";//定义变量
+@import "./6-import-module1";//使用上面定义的变量
+@import "./6-import-module2";
+
+//如下
+//@import "logo"; //导入logo模块.
+//@import "header";//导入头部模块.
+//@import "nav"; //导入导航模块.
+//@import "article"; //导入文章模块.
+//@import "footer"; //导入底部模块.

@@ -1,0 +1,26 @@
+@fontSize: 12px; //带单位运算
+@bgColor: red; //背景颜色
+@textBgColor: yellow; //文本颜色
+@linkBgColor: #f66; //链接颜色
+@headingFontSize: 16px;
+@footerFontSize: 9px;
+@contentFontSize: 12px;
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  //lighten夜色变浅,变浅40%.
+  background: lighten(@bgColor, 40%);
+
+  .nav {
+    font-size: @fontSize;
+  }
+  .content {
+    font-size: @fontSize + 2px;
+    &:hover {
+      background: @textBgColor;
+    }
+  }
+}

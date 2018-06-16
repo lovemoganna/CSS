@@ -1,0 +1,20 @@
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  background: pink;
+
+  .nav {
+    font-size: 12px;
+  }
+  .content {
+    font-size: 14px;
+    //:hover 选择器鼠标指针在其上浮动设置样式
+    &:hover {
+      background: yellow;
+    }
+  }
+}

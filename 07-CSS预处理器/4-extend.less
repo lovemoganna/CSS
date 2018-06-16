@@ -1,0 +1,29 @@
+
+@fontSize: 12px;
+@bgColor: red;
+
+.block{
+    font-size: @fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    background:lighten(@bgColor, 40%);
+    //这就代表.nav的演示是来自于.block扩展的.
+    .nav:extend(.block){
+        color: #333;
+    }
+    .content{
+        //也可以采用拼接的方式来写.这样可能可读性会好点.
+        &:extend(.block);
+        &:hover{
+            background:red;
+        }
+    }
+}

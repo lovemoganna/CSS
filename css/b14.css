@@ -1,0 +1,17 @@
+html{
+	/* 绝对单位-英寸
+	1英寸 = 2.54厘米
+	2.54 * 0.2 = 0.508cm
+	 */
+	font-size: 0.2in;
+
+}
+
+.item14 p.p1{
+	background: grey;
+	color: white;
+	/* 字体大小为文档根元素字体大小的2倍： 1cm */
+	font-size: 2rem;
+	/* 高度为字体大小的两倍： 2cm */
+	height: 2em;
+}

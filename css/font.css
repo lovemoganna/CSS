@@ -1,0 +1,9 @@
+	@import url("https://fonts.googleapis.com/css?family=Cairo|Roboto|Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900");
+
+	:root {
+		--font-family: "Roboto", "Noto Sans SC", "Noto Serif SC", sans-serif;
+	}
+
+	html {
+		font-family: var(--font-family);
+	}

@@ -1,0 +1,16 @@
+.tb1 caption{
+	color: red;
+	font-size: 14px;
+	font-weight: 800
+}
+
+.tb1 thead{
+	font-size: 14px;
+}
+
+.tb1 tbody{
+}
+.item11 p.p1{
+	font-size: 20pt;
+	width: 10cm;
+}

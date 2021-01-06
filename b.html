@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 示例展示</title>
+    <link rel="stylesheet" href="css/b.css">
+    <link rel="stylesheet" href="css/combine.css">
+    <link rel="stylesheet" href="css/b5.css">
+    <link rel="stylesheet" href="css/b6.css">
+    <link rel="stylesheet" href="css/b7.css">
+    <link rel="stylesheet" href="css/b8.css">
+    <link rel="stylesheet" href="css/b9.css">
+    <link rel="stylesheet" href="css/b10.css">
+    <link rel="stylesheet" href="css/b11.css">
+    <link rel="stylesheet" href="css/b12.css">
+    <link rel="stylesheet" href="css/b13.css">
+    <link rel="stylesheet" href="css/b14.css">
+    <link rel="stylesheet" href="css/b15.css">
+    <link rel="stylesheet" href="css/b16.css">
+    <link rel="stylesheet" href="css/b17.css">
+    <link rel="stylesheet" href="css/b18.css">
+    <style>
+    .item1 a {
+        background-color: red;
+        color: white;
+    }
+
+    .item1 span {
+        border: thin black solid;
+        padding: 10px;
+        color: green;
+    }
+
+    .item4 a {
+        /* 重要样式标记，会优先加载它 */
+        color: pink !important;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>使用元素内嵌样式</h2>
+    <div class="item">
+        <a href="https://baidu.com" style="background-color:grey;color:white">baidu</a>
+        <p>I Like <span>apples</span> and oranges.</p>
+        <a href="https://w3c.org">Visit the W3C School.</a>
+    </div>
+    <h2>使用文档内嵌样式</h2>
+    <div class="item1">
+        <a href="https://apress.org">Visit the Apress School.</a>
+        <p>I Like <span>apples</span> and oranges.</p>
+        <a href="httpS://w3c.org">Visit the W3C School.</a>
+    </div>
+    <h2>使用外部样式表</h2>
+    <div class="item2">
+        <a href="https://apress.org">Visit the Apress School.</a>
+        <p>I Like <span>apples</span> and oranges.</p>
+        <a href="httpS://w3c.org">Visit the W3C School.</a>
+    </div>
+    <h2>从其他样式表中导入样式</h2>
+    <div class="item3">
+        <a href="https://apress.org">Visit the <span>Apress</span> School.</a>
+    </div>
+    <h2>样式表的层叠和继承</h2>
+    <div>用户代理样式另外两种来源：浏览器样式、用户样式</div>
+    <div>浏览器样式指的是浏览器应用在元素上的默认样式</div>
+    <div>用户样式指的是浏览器应用用户自定义的浏览器样式 --- 此时需要找到浏览器自定义样式表的位置</div>
+    <h2>样式如何层叠?</h2>
+    <div>浏览器求索CSS属性值的次序如下:</div>
+    <ul>
+        <li>元素内嵌样式</li>
+        <li>文档内嵌样式</li>
+        <li>外部样式</li>
+        <li>用户样式</li>
+        <li>浏览器样式</li>
+    </ul>
+    <h2>使用重要样式调整层叠次序</h2>
+    <div class="item4">
+        <a href="https://apress.org" style="color: black">Visit the <span>Apress</span> School.</a>
+    </div>
+    <h2>根据具体程度和定义次序解决同级样式冲突</h2>
+    <div>样式具体程度的三类特征如下:</div>
+    <ul>
+        <li>样式选择器中的 id 值的数目</li>
+        <li>选择器中其他属性和伪类的数目</li>
+        <li>选择器中元素名和伪元素的数目</li>
+    </ul>
+    <h3>样式的具体程度</h3>
+    <p>
+        在评定具体程度的时候，按照 a-b-c 的形式来生成数字
+        a: 指的是 几个 id 值;
+        b: 指的是 几个 属性;
+        c: 指的是 几个 元素名;
+    </p>
+    <p>值得注意的是只有a值相等时，才会考虑b值. e.g. 1-0-0 比 0-5-5 所代表的具体程度要高。</p>
+    <h4>具体程度不同的测试</h4>
+    <div class="item5">
+        <a href="google.com">google</a>
+        <a href="google.com" class="myclass">google</a>
+    </div>
+    <h4>具体程度相同的样式</h4>
+    <div>遵循样式表书写后来者居上原则</div>
+    <div class="item6">
+        <a href="baidu.com" class="myclass1 myclass2">baidu</a>
+        <a href="google.com" class="myclass4 myclass3">google</a>
+    </div>
+    <h2>继承</h2>
+    <p>在此仅设置了 span 父元素 p 的样式，可见 p 也继承了父元素的样式</p>
+    <p>
+        并非所有的CSS属性都可继承!
+        <br>
+        1.可以继承父元素的样式的是与元素外观相关的.
+        <br>
+        2.与元素在页面上的布局相关的样式不会被继承.
+        <br>
+        3.在样式中使用 inherit 特殊值可以实施强制继承.
+    </p>
+    <div class="item7">
+        <p>我喜欢<span>喝茶</span></p>
+    </div>
+    <h3>使用 inherit 实施强制继承</h3>
+    <div class="item9">
+        <p>我喜欢<span>计算机 --- 此字段没有实施强制继承</span></p>
+    </div>
+    <div class="item8">
+        <p>我喜欢<span>计算机 --- 此字段已实施强制继承</span></p>
+    </div>
+    <div class="item10">
+        <p>黑色</p>
+        <p class="p1">black</p>
+        <p>银色</p>
+        <p class="p15">silver</p>
+        <p>灰色</p>
+        <p class="p2">grey</p>
+        <p>白色</p>
+        <p class="p3">white</p>
+        <p>栗色</p>
+        <p class="p4">maroon</p>
+        <p>红色</p>
+        <p class="p5">red</p>
+        <p>紫色</p>
+        <p class="p6">purple</p>
+        <p>紫红色</p>
+        <p class="p7">fushia</p>
+        <p>绿色</p>
+        <p class="p8">green</p>
+        <p>青柠色</p>
+        <p class="p9">lime</p>
+        <p>橄榄绿</p>
+        <p class="p10">olive</p>
+        <p>海军蓝</p>
+        <p class="p11">navy</p>
+        <p>蓝色</p>
+        <p class="p12">blue</p>
+        <p>黄色</p>
+        <p class="p13">yellow</p>
+        <p>蓝绿色</p>
+        <p class="p14">teal</p>
+        <p>水色 - 介于蓝色和青色之间</p>
+        <p class="p16">aqua</p>
+        <p>深灰色</p>
+        <p class="p17">darkgray</p>
+        <p>深石灰色</p>
+        <p class="p18">darkslategray</p>
+        <p>暗灰色</p>
+        <p class="p19">dimgray</p>
+        <p>灰色</p>
+        <p class="p20">gray</p>
+        <p>浅灰色</p>
+        <p class="p21">lightgray</p>
+        <p>浅石灰色</p>
+        <p class="p22">lightslategray</p>
+        <p>石灰色</p>
+        <p class="p23">slategray</p>
+        <p>RGB模型表示颜色</p>
+        <p class="p24">RGB</p>
+        <p>RGB模型，附加透明度a</p>
+        <p class="p25">RGBA</p>
+        <p>HSL模型表示颜色</p>
+        <p class="p26">HSL</p>
+        <p>HLS模型，附加 a表示透明度</p>
+        <p class="p27">HLSA</p>
+    </div>
+    <h2>css中的长度</h2>
+    <p>css有两种类型的长度单位：1.绝对单位。2.相对单位。</p>
+    <div class="item11">
+        <p class="p1">hello world</p>
+    </div>
+    <h2>绝对长度</h2>
+    <p>css中的绝对单位有 in、cm、mm、pt、pc</p>
+    <table border="1" class="tb1">
+        <!-- 表的标题 -->
+        <caption>CSS中的绝对单位</caption>
+        <!-- 应用于列的属性设置 -->
+        <colgroup>
+            <col span="1" style="background-color: red">
+            <col style="background-color: yellow">
+        </colgroup>
+        <!-- 表的页眉 -->
+        <thead>
+            <tr>
+                <th>单位表示符</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <!-- 表的主体 -->
+        <tbody>
+            <tr>
+                <td>in</td>
+                <td>英寸</td>
+            </tr>
+            <tr>
+                <td>mm</td>
+                <td>毫米</td>
+            </tr>
+            <tr>
+                <td>pt</td>
+                <td>磅</td>
+            </tr>
+            <tr>
+                <td>pc</td>
+                <td>pica</td>
+            </tr>
+        </tbody>
+        <!-- 表的页脚 -->
+        <tfoot>
+            <tr>
+                <td>总计</td>
+                <td>5个</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>以上是现实世界中的度量单位,也就是一把尺子20cm，显示在web上也是现实世界的长度。我们可以用一个元素的 background width 来测试下</p>
+    <div class="item12">
+        <p class="p1">
+            这把尺子长20cm.
+        </p>
+    </div>
+    <h2>相对长度</h2>
+    <ul>
+        <li>相对长度需要严密、精确的明确定义.</li>
+        <li>相对单位的测量需要依托其他类型的单位.</li>
+    </ul>
+    <p>下面是CSS支持的相对单位</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>单位标识符</td>
+                <td>说明</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>em</td>
+                <td>与元素字号有关</td>
+            </tr>
+            <tr>
+                <td>ex</td>
+                <td>与元素的“x高度”相关</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>与根元素的字号有关</td>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td>CSS像素（假定显示器的分辨率为96dpi)</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>另一属性的值的百分比</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>5个</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h3>与字号关联的相对单位</h3>
+    <div class="item13">
+        <p class="p1">吃尽天下美食</p>
+        <p style="font-size: 12pt" class="p1">就是不喝酒</p>
+        <p style="height: 30pt" class="p1">就是不喝酒</p>
+        <p>元素的高度都设置为2em,你可以发现元素的高度随着字体大小的变化而变化.</p>
+        <p>然后再重新设置字体的高度为30pt,你会发现元素的高度又和第一段的高度一样</p>
+    </div>
+    <h3>使用从另一相对单位推算出来的相对单位</h3>
+    <p>rem根据html元素的字号而定</p>
+    <p>
+        绝对单位-英寸
+        1英寸 = 2.54厘米
+        2.54 * 0.2 = 0.508cm
+        1px = ?cm
+        px单位与像素分辨率(ppi)有关，我们先搞懂本机显示器的像素再来进行计算吧。
+        一般情况下，PC电脑的分辨率为 1920*1024 的分辨率。 水平分辨率*垂直分辨率
+        2k分辨率: 1920*1080
+        2.5K分辨率： 2560*1440
+        4k分辨率: 通指水平分辨率具有约4000像素的显示设备或内容.
+        关于几K 跟水平分辨率有关。
+        所以在PC显示器分辨率为 1920*1080 下，1px = ？cm 哪？
+        去他大爷的，还得往下深入学习，得用老外的标准来进行换算。
+    </p>
+    <p>参考<a href="https://www.cnblogs.com/kidney/p/6692312.html">链接</a></p>
+    <p>下面是一个示例，瞧下</p>
+    <div class="item14">
+        <p class="p1">hello world</p>
+    </div>
+    <h3>ex单位，指的是当前字体的x高度，即字体基线到中线之间的距离，一般与字母x的高度相当</h3>
+    <p>通常 1ex = 0.5em</p>
+    <div class="item15">
+        <p class="p1">
+            hello you xxxxxxxxx,我的大小与字母x的高度有关
+        </p>
+    </div>
+    <h3>像素单位</h3>
+    <p>传统的参考像素是像素密度为 96dpi的设备</p>
+    <p>基于以上96dpi的设备, 1px = 1/96 in(英寸）=1/96*2.54=0.026458cm</p>
+    <p>虽然css像素本来想定义为相对度量单位，但却被浏览器当做绝对单位对待。</p>
+    <div class="item16">
+        <p class="p1">no hello</p>
+    </div>
+    <p>一般使用 em更灵活些，变态使用 rem.</p>
+    <h3>百分比单位</h3>
+    <p>可以把一个度量单位表示为其他属性值的百分比。</p>
+    <p>使用百分比。对于 font-size 关联的是元素继承到的 font-size 值.</p>
+    <p>对于 width,关联的是元素包含块的宽度。 在此，可以观察下 div的宽度为400px，p标签的宽度已经设置为其一半。</p>
+    <div class="item17">
+        <p class="p1">
+            hello
+        </p>
+    </div>
+    <h3>未获得广泛支持的CSS属性</h3>
+    <table border="1" class="tb2">
+        <caption>缺乏浏览器支持的CSS相对度量单位</caption>
+        <thead>
+            <tr>
+                <td>单位标识符</td>
+                <td>说明</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>gd</td>
+                <td>与grid布局有关</td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>与viewport宽度关联，1vw=文档显示区域（浏览器窗口宽度）的 1%.</td>
+            </tr>
+            <tr>
+                <td>vh</td>
+                <td>与viewport的高度关联，1vh=文档显示区域（浏览器高度）的 1%。</td>
+            </tr>
+            <tr>
+                <td>vm</td>
+                <td>1vm等于最短 viewport轴长（高度和宽度最小那个）的 1%。</td>
+            </tr>
+            <tr>
+                <td>ch</td>
+                <td>与当前字体显示的字符的平均宽度有关。</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>5</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p> vmin --- vm中较小值</p>
+    <p> vmax --- vh较大值</p>
+    <h3>表达式计算值</h3>
+    <p> calc(80%-20px) --- 此时宽度依赖的是包含块的宽度</p>
+    <div class="item18">
+        <p class="p1">hello</p>
+    </div>
+    <h2>使用CSS角度</h2>
+    <table border="1">
+        <caption>CSS角度单位</caption>
+        <thead>
+            <tr>
+                <td>单位标识符</td>
+                <td>说明</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>deg</td>
+                <td>度（取值范围：0-360）</td>
+            </tr>
+            <tr>
+                <td>grad</td>
+                <td>百分度（取值范围：0-400）</td>
+            </tr>
+            <tr>
+                <td>rad</td>
+                <td>弧度（取值范围：0-6.28）</td>
+            </tr>
+            <tr>
+                <td>turn</td>
+                <td>圆周（1turn = 360deg)</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>4</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h2>CSS 时间</h2>
+    <p> s ---- 秒</p>
+    <p> ms ---- 毫秒 1s = 1000ms</p>
+    <h1>更多工具</h1>
+    <h2>less or postcss</h2>
+    <h2>SelectorGadget 生成选择器</h2>
+    <h2>css 框架</h2>
+</body>
+
+</html>

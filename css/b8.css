@@ -1,0 +1,13 @@
+/* 可以与 item9做下比对，观察下继承关系的变化 */
+.item8 p{
+	color: white;
+	background: grey;
+	border: medium dashed black;
+	border-color: red;
+	padding: 10px;
+}
+
+.item8 span{
+	border: inherit;
+	padding: inherit - 5px;
+}

@@ -1,0 +1,21 @@
+/* 如果同一个属性样式在具体程度相同的样式中，规则是后来者居上。 */
+.item6 a.myclass1{
+	color: grey;
+}
+
+.item6 a.myclass2{
+	color: pink;
+}
+
+/* 值得注意的是，样式具体程度与样式编写顺序有关，遵循后来者居上原则。 
+跟HTML中的属性书写顺序无关.
+*/
+.item6 a.myclass4{
+	color: red;
+}
+.item6 a.myclass3{
+	color: lightyellow;
+}
+
+
+

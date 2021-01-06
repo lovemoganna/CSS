@@ -1,0 +1,9 @@
+.item2 a{
+	background-color: red;
+	color: white;
+}
+.item2 span{
+	border: thin black solid;
+	padding: 10px;
+	color: blue;
+}

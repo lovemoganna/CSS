@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>表格元素</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css?family=Cairo|Roboto|Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900");
+
+		:root {
+			--font-family: "Roboto", "Noto Sans SC", "Noto Serif SC", sans-serif;
+		}
+
+		html {
+			font-family: var(--font-family);
+		}
+
+		/*匹配tr元素下的所有th元素*/
+		tr>th {
+			text-align: left;
+			background: grey;
+			color: white;
+		}
+
+		/*只匹配tr元素的子元素中唯一的th元素*/
+
+		/*tr>th:only-of-type {
+			text-align: right;
+			background: lightgrey;
+			color: gery;
+		}
+		*/
+
+		tbody th {
+			text-align: right;
+			background: lightgrey;
+			color: grey; 
+		}
+		
+		thead th, tfoot th{
+			text-align: center;
+			background: grey;
+			color: white;
+		}
+
+		tbody th{
+			text-align: right;
+			background: lightgrey;
+			color: gery;
+		}
+
+		[colspan],[rowspan]{
+			font-weight: bold;
+			border: medium solid black;
+		}
+
+		thead [colspan],tfoot [colspan]{
+			text-align: center;
+		}
+
+		td {
+			border: thin solid black;
+			padding: 5px;
+			font-size: x-large;
+		}
+
+		caption {
+			font-weight: bold;
+			font-size: large;
+			margin-bottom: 5px;
+		}
+
+		#colgroup1 {
+			background-color: red;
+		}
+
+		#colgroup2 {
+			background-color: yellow;
+		}
+
+		#col3 {
+			background-color: green;
+			font-size: small;
+		}
+	</style>
+</head>
+
+<body>
+	<p>表格的主要用途是以网格的形式显示二维数据.</p>
+	<h3>生成基本的表格</h3>
+	<p>table tr td 是表格必须要有的元素.</p>
+	<div class="item1">
+		<table>
+			<tr>
+				<td>Apples</td>
+				<td>Green</td>
+				<td>Medium</td>
+			</tr>
+			<tr>
+				<td>Oranges</td>
+				<td>JJBo</td>
+				<td>CCA</td>
+			</tr>
+		</table>
+	</div>
+	<h3>添加一些内容更长的单元格</h3>
+	<div class="item2">
+		<table>
+			<tr>
+				<td>Apples</td>
+				<td>Green</td>
+				<td>Medium</td>
+			</tr>
+			<tr>
+				<td>Oranges</td>
+				<td>JJBo</td>
+				<td>CCA</td>
+			</tr>
+			<tr>
+				<td>Pimegranate</td>
+				<td>A kind of greeny-red</td>
+				<td>Varies from medium to large</td>
+			</tr>
+		</table>
+	</div>
+	<p>每个新添加的td元素中的内容都比原有两行中的单元格的内容长.浏览器会调整其他单元格,让它们宽度一致.</p>
+	<h2>添加表头单元格</h2>
+	<p>th元素表示表头的单元格,它可以用来区分数据和对数据的说明.</p>
+	<div class="item3">
+		<table>
+			<tr>
+				<th>Rank</th>
+				<th>Name</th>
+				<th>Color</th>
+				<th>Size</th>
+			</tr>
+			<tr>
+				<th>Favorite:</th>
+				<td>Apples</td>
+				<td>Green</td>
+				<td>Medium</td>
+			</tr>
+			<tr>
+				<th>2nd Favorite:</th>
+				<td>Oranges</td>
+				<td>JJBo</td>
+				<td>CCA</td>
+			</tr>
+			<tr>
+				<th>3rd Favorite:</th>
+				<td>Pimegranate</td>
+				<td>A kind of greeny-red</td>
+				<td>Varies from medium to large</td>
+			</tr>
+		</table>
+	</div>
+	<p>可以在一行中混合使用th和td元素,也可以让一行包含清一色的th元素.</p>
+	<h3>为表格添加结构</h3>
+	<p>就是添加一些样式</p>
+	<div class="item4">
+		<table>
+			<tr>
+				<th>Rank</th>
+				<th>Name</th>
+				<th>Color</th>
+				<th>Size</th>
+			</tr>
+			<tr>
+				<th>Favorite:</th>
+				<td>Apples</td>
+				<td>Green</td>
+				<td>Medium</td>
+			</tr>
+			<tr>
+				<th>2nd Favorite:</th>
+				<td>Oranges</td>
+				<td>JJBo</td>
+				<td>CCA</td>
+			</tr>
+			<tr>
+				<th>3rd Favorite:</th>
+				<td>Pimegranate</td>
+				<td>A kind of greeny-red</td>
+				<td>Varies from medium to large</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>表示表头和表格主题</h3>
+	<p>tbody元素表示构成表格主题的全体行 - 不包括表头行和表脚行</p>
+	<p>大多数浏览器在处理table元素的时候都会自动插入tbody元素.因此完全根据文档中的表格结构来设计的CSS选择器有可能不管用.</p>
+	<p>
+		例如,由于浏览器在table和tr元素之间插入了一个tbody元素,所以tbody > tr 这个选择器会失效.为了应对这种情况,需要使用 table > tbody > tr 或 table tr(没有字符>)这样的选择器,或者直接写成 tbody > tr
+	</p>
+	<p>thead元素用来标记表格的标题行.</p>
+	<h3>为表格添加thead和tbody元素</h3>
+	<div class="item5">
+		<table>
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Size</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Favorite:</th>
+					<td>Apples</td>
+					<td>Green</td>
+					<td>Medium</td>
+				</tr>
+				<tr>
+					<th>2nd Favorite:</th>
+					<td>Oranges</td>
+					<td>JJBo</td>
+					<td>CCA</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pimegranate</td>
+					<td>A kind of greeny-red</td>
+					<td>Varies from medium to large</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h3>添加表脚</h3>
+	<p>tfoot元素用来标记组成表脚的行.</p>
+
+	<div class="item6">
+		<table>
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Size</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Size</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th>Favorite:</th>
+					<td>Apples</td>
+					<td>Green</td>
+					<td>Medium</td>
+				</tr>
+				<tr>
+					<th>2nd Favorite:</th>
+					<td>Oranges</td>
+					<td>JJBo</td>
+					<td>CCA</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pimegranate</td>
+					<td>A kind of greeny-red</td>
+					<td>Varies from medium to large</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h3>制作不规则表格</h3>
+	<p>大多数表格都是简单的网格形式,每个单元格占据网格中的一个位置.但为了表示更加复杂的数据,有时需要制作不规则的表格,其中的单元格会跨越几行或激烈.</p>
+	<p>这种表格的制作要用到td和th元素的colspan和rowspan属性.</p>
+	<div class="item7">
+		<table>
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Color</th>
+					<th colspan="2">Size</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th colspan="5">&#169 Copyright 221 Adam Freeman Fruit Data Enterprises</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th>Favorite:</th>
+					<td>Apples</td>
+					<td>Green</td>
+					<td>Medium</td>
+					<td>500</td>
+				</tr>
+				<tr>
+					<th>2nd Favorite:</th>
+					<td>Oranges</td>
+					<td>JJBo</td>
+					<td>CCA</td>
+					<td>450</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pomegranate</td>
+					<td colspan="2" rowspan="2">Pimegranate and cherries can both come in a range of colors and sizes.</td>
+					<td>2312</td>
+				</tr>
+				<tr>
+					<th rowspan="2">Joint 4th:</th>
+					<td>Cherries</td>
+					<td rowspan="2">75</td>
+				</tr>
+				<tr>
+					<td>Pineapple</td>
+					<td>Brown</td>
+					<td>Very Small</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h3>一个简单的表格</h3>
+	<p>将一个单元格扩展到多行,浏览器会负责将所定义的其他单元格妥善安置在扩展后的单元格周围.</p>
+	<div class="item8">
+		<table>
+			<tr>
+				<td>1</td>
+				<td rowspan="3">2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>9</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>把表头与单元格关联起来</h3>
+	<p>td和tr元素都定义了headers属性,它可以供屏幕阅读器和其他残障辅助技术来简化对表格的处理.</p>
+	<p>headers属性的值可被设置为一个或多个th单元格的id属性值.</p>
+	<div class="item9">
+		<table>
+			<caption>Results of the 2012 Fruit Survey</caption>
+			<thead>
+				<tr>
+					<th id="rank">Rank</th>
+					<th id="name">Name</th>
+					<th id="color">Color</th>
+					<th id="sizeAndVotes" colspan="2">Size & Votes</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th colspan="5">&#169 Copyright 221 Adam Freeman Fruit Data Enterprises</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th id="first" headers="rank">Favorite:</th>
+					<td headers="name first">Apples</td>
+					<td headers="color first">Green</td>
+					<td headers="sizeAndVote first">Medium</td>
+					<td headers="sizeAndVote first">500</td>
+				</tr>
+				<tr>
+					<th id="second" headers="rank">2nd Favorite:</th>
+					<td headers="name second">Oranges</td>
+					<td headers="color second">JJBo</td>
+					<td headers="sizeAndVote second">Large</td>
+					<td headers="sizeAndVote second">450</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pomegranate</td>
+					<td colspan="2" rowspan="2">Pimegranate and cherries can both come in a range of colors and sizes.</td>
+					<td>2312</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p>此例为thead和tbody中的每一个th元素都设置了全局的id属性值.tbody中的每一个td和th元素都通过设置headers属性将相应的单元格与列表头关联起来.</p>
+	<p>td元素还指定了所关联的行表头.</p>
+
+	<h3>为表格添加标题</h3>
+	<p>使用caption元素</p>
+
+	<h3>处理列</h3>
+	<p>HTML中的表格都是基于行的.单元格的定义都要放在tr元素当中,而表格是一行一行地组建出来的.</p>
+	<p>使用colgroup和col元素可以解决,colgroup代表一组列</p>
+	<div class="item9">
+		<table>
+			<caption>Results of the 2012 Fruit Survey</caption>
+			<colgroup id="colgroup1" span="3"/>
+			<colgroup id="colgroup2" span="2"/>
+			<thead>
+				<tr>
+					<th id="rank">Rank</th>
+					<th id="name">Name</th>
+					<th id="color">Color</th>
+					<th id="sizeAndVotes" colspan="2">Size & Votes</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th colspan="5">&#169 Copyright 221 Adam Freeman Fruit Data Enterprises</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th id="first" headers="rank">Favorite:</th>
+					<td headers="name first">Apples</td>
+					<td headers="color first">Green</td>
+					<td headers="sizeAndVote first">Medium</td>
+					<td headers="sizeAndVote first">500</td>
+				</tr>
+				<tr>
+					<th id="second" headers="rank">2nd Favorite:</th>
+					<td headers="name second">Oranges</td>
+					<td headers="color second">JJBo</td>
+					<td headers="sizeAndVote second">Large</td>
+					<td headers="sizeAndVote second">450</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pomegranate</td>
+					<td colspan="2" rowspan="2">Pimegranate and cherries can both come in a range of colors and sizes.</td>
+					<td>2312</td>
+				</tr>
+				<tr>
+					<th rowspan="2">Joint 4th:</th>
+					<td>Cherries</td>
+					<td rowspan="2">75</td>
+				</tr>
+				<tr>
+					<td>Pineapple</td>
+					<td>Brown</td>
+					<td>Very Small</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<p>此例定义了两个colgroup元素,span属性指定了colgroup元素负责的列数.</p>
+	<p>第一个colgroup负责表格中的前三列,另一个负责colgroup中的剩余两列.</p>
+	<p>两个colgroup都设置了id属性值,并以其id值为选择器定义了相应的css样式.</p>
+	<p>1.从表现来看,应用到colgroup上的CSS样式在具体程度上低于直接应用到tr,td和th元素上的样式.</p>
+	<p>从第一列的表现上就可以看出这一点.</p>
+	<p>2.不规则单元格被记入其起始列</p>
+	<p>3.colgroup元素的影响范围覆盖了列中所有的单元格,因此该元素无法用做更具体的选择器的基础,所以需要用col指定组中个别的列.</p>
+	<div class="item10">
+		<table>
+			<caption>Results of the 2012 Fruit Survey</caption>
+			<colgroup id="colgroup1">
+				<col id="col1And2" span="2">
+				<col id="col3">
+			</colgroup>
+			<colgroup id="colgroup2" span="2"/>
+			<thead>
+				<tr>
+					<th id="rank">Rank</th>
+					<th id="name">Name</th>
+					<th id="color">Color</th>
+					<th id="sizeAndVotes" colspan="2">Size & Votes</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th colspan="5">&#169 Copyright 221 Adam Freeman Fruit Data Enterprises</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th id="first" headers="rank">Favorite:</th>
+					<td headers="name first">Apples</td>
+					<td headers="color first">Green</td>
+					<td headers="sizeAndVote first">Medium</td>
+					<td headers="sizeAndVote first">500</td>
+				</tr>
+				<tr>
+					<th id="second" headers="rank">2nd Favorite:</th>
+					<td headers="name second">Oranges</td>
+					<td headers="color second">JJBo</td>
+					<td headers="sizeAndVote second">Large</td>
+					<td headers="sizeAndVote second">450</td>
+				</tr>
+				<tr>
+					<th>3rd Favorite:</th>
+					<td>Pomegranate</td>
+					<td colspan="2" rowspan="2">Pimegranate and cherries can both come in a range of colors and sizes.</td>
+					<td>2312</td>
+				</tr>
+				<tr>
+					<th rowspan="2">Joint 4th:</th>
+					<td>Cherries</td>
+					<td rowspan="2">75</td>
+				</tr>
+				<tr>
+					<td>Pineapple</td>
+					<td>Brown</td>
+					<td>Very Small</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

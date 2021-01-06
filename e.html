@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="revolt"/>
+	<meta name="description" content="学习HTML5,用颜色点缀生活"/>
+	<!-- 表示让搜索引擎不要索引本页 -->
+	<meta name="robots" content="noindex"/>
+	<meta name="application name" content="gnu/linux"/>
+	<meta name="generator" content="People fucking creating the page"/>
+
+	<!-- 设置基准URL -->
+	<!-- <base href="https://www.scheme.com/"/> -->
+	
+	<!-- 另行指定一个URL让浏览器载入 -->
+	<!-- <meta http-equiv="refresh" content="3,http://www.baidu.com/"> -->
+	<!-- <meta http-equiv="refresh" content="3"> -->
+
+	<!-- 指定页面优先使用的样式表,若更改样式,改变 title 值即可 -->
+	<meta http-equiv="default-style" content="e11">
+
+	<!-- 声明HTML页面所用字符编码的方法 -->
+	<meta http-equiv="content-type" content="text/html charset=UTF-8"/>
+
+	<title>创建HTML文档</title>
+
+	<!-- 用link元素添加网站标志 -->
+	<link rel="shortcut icon" href="assets/icon/moganna.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="css/e1.css" title="e1">
+	<link rel="stylesheet" href="css/e2.css" title="e2">
+	<link rel="stylesheet" href="css/e3.css" title="e3">
+	<link rel="prefetch" href="http://caiorss.github.io/Emacs-Elisp-Programming/">
+
+	<!-- 定义CSS样式
+	1.type 指定样式类型
+	2.(TODO: 需要搜索哪个浏览器是否支持)scope 指定样式作用范围
+	3.指定样式使用的媒体
+    -->
+
+    <style title="e4" media="tv" type="text/css">
+    	h2#title{
+    		font-size: 8px;
+    	}
+    	a {
+    		background-color: red;
+    		color: white;
+    		padding: 0.5em;
+    	}
+    </style>
+
+    <!-- 测试Chrome浏览器的打印效果时,样式生效 -->
+    <style media="print" title="e5" type="text/css">
+    	h2#title{
+    		font-size: 8px;
+    	}
+    	a {
+    		background-color: yellow;
+    		color: red;
+    		padding: 0.5em;
+    		font-size: 20px;
+    		font-weight: bold;
+    	}
+    </style>
+
+    <!-- 浏览器窗口小于500px时使用的样式 -->
+    <style media="screen AND (max-width:500px)" type="text/css" title="e6">
+    	a {
+    		background-color: grey;
+    		color: white;
+    		padding: 0.5em;
+    	}
+    </style>
+
+
+    <!-- 浏览器窗口大于500px时使用的样式 -->
+    <style media="screen AND (min-width:1000px)" type="text/css" title="e7">
+    	a {
+    		color: red;
+    		font-style: italic;
+    	}
+    </style>
+
+     <!-- 浏览器窗口大于500px时使用的样式 -->
+    <style media="screen AND (min-width:500px) AND (max-width:700px) " type="text/css" title="e8">
+    	a {
+    		color: yellow;
+    		font-style: italic;
+    	}
+    </style>
+
+    <!-- 可以用这个属性来区分不同样式 -->
+    <style media="screen AND (min-device-width:3000px) AND (min-device-height:3000px)" type="text/css" title="e9">
+    	a {
+    		color:pink;
+    		font-style: italic;
+    	}
+    </style>
+
+    <!-- TODO: 如何查看设备的dpi -->
+     <style media="screen AND (min-resolution: 90dpi)" type="text/css" title="e9">
+    	a {
+    		color:pink;
+    		font-style: italic;
+    	}
+    </style>
+    
+    <!-- 指定浏览器窗口或者整个设备的像素宽高比。 aspect-ratio | device-aspect-ratio -->
+    <style media="screen AND (min-aspect-ratio:16/9)" type="text/css" title="e10">
+    	a {
+    		color: yellow;
+    		font-style: italic;
+    	}
+    </style>
+
+    <!-- 设置显示器可以处理的颜色数 + 规定单色帧缓冲的 bits/pixel 
+	grid 指定设备的类型，1表示网格型设备,百度不会收录这种词条。
+    -->
+    <style media="screen AND (min-color-index:256) AND (monochrome:2) AND (grid:1)" type="text/css" title="e11">
+    	a {
+    		color: yellow;
+    		font-style: italic;
+    	}
+    </style>
+    <script>
+    	document.write("hello world ni da ye")
+    </script>
+
+    <script type="text/javascript" src="js/e1.js">
+    </script>
+
+    <!-- 整个HTML解析完毕后才会加载和执行此脚本
+
+		!!! defer属性只能用于外部脚本文件,它对文档内嵌脚本不起作用
+     -->
+    <script type="text/javascript" defer src="js/e3.js"></script>
+
+    <script async type="text/javascript" defer src="js/e4.js"></script>
+
+    <noscript>
+    	<h2>javascript is required!</h2>
+    	<p>如果禁用了JS脚本,你将不能使用这个页面,5S之后会重定向到必应搜索引擎的页面.</p>
+    </noscript>
+
+    <!-- 使用noscript重定向浏览器,在禁用了JS之后就会发生重定向的行为 -->
+    <noscript>
+    	<meta http-equiv="refresh" content="5;http://cn.bing.com" />
+    </noscript>
+</head>
+<body>
+	<h2 id="title">构建基本的文档结构</h2>
+	<h3>DOCTYPE元素</h3>
+	<p>
+		使用 !DOCTYPE HTML 告诉浏览器两件事情:
+		<ul>
+			<li>
+				1.它处理的时HTML文档
+			</li>
+			<li>2.用来标记文档内容的HTML所属的版本.浏览器会自动探测这里所用的时HTML5.</li>
+		</ul>
+	</p>
+
+	<h3>html元素</h3>
+	<p>html元素又称根元素,表示文档中HTML部分的开始</p>
+	<ul>
+		<li>
+			局部属性 --- manifest
+		</li>
+	</ul>
+
+	<h3>head元素</h3>
+	<p>head元素包含着文档的元数据</p>
+	<p>每个HTML元素都应该包含一个head元素,head元素里必须包含一个title元素</p>
+
+	<h3>body元素</h3>
+	<p>
+		文档的内容包装在body元素中.	
+	</p>
+	<div class="item">
+		<p>chez <code>scheme</code></p>
+		<a href="https://www.scheme.com/">Visit scheme office website</a>
+	</div>
+
+	<h3>用元数据元素说明文档</h3>
+	<p>设置文档标题</p>
+
+	<h3>设置相对URL的解析基准</h3>
+	<p>base元素可以用来设置一个基准URL</p>
+
+	<div class="item2">
+		<p>chez<code>scheme</code></p>
+		<p>在title处利用base设置一个基准URL</p>
+		<a href="https://www.scheme.com/">Visit scheme office website</a>
+		<a href="tspl4">Online Document</a>
+	</div>
+	<p><code style="color:red;font-size: 20px;font-weight: 600">TODO</code>使用target属性</p>
+
+	<h2>用元数据说明文档</h2>
+	<h3>使用meta数据,说明文档内容</h3>
+	<p>更多 meta元素的使用,参见<a href="https://wiki.whatwg.org/wiki/MetaExtensions">wiki</a></p>
+	<p>注意 robots 值得设置: noindex(不要索引本页) noarchive (表示不要将本页存档或者缓存) nofollow (不要顺着本页中的链接继续搜索下去)</p>
+	<p>根据wiki的说明自由探索符合当前的项目</p>
+
+	<h3>声明字符编码</h3>
+
+	<h3>模拟HTTP标头字段</h3>
+	<p>meta元素可以用来改写HTTP标头字段的值.瞎改写下,简单认识下</p>
+	<p>有这个功能,还他娘的开个毛服务器,直接设置每3S刷新一次页面,不就重新加载页面了吗?</p>
+	<div class="item3">
+		<table border="1">
+			<thead>
+				<tr>
+					<td>属性值</td>
+					<td>说明</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>refresh</td>
+					<td>以秒为单位指定一个时间间隔,在此时间过去之后将从服务器重新载入当前页面.也可以另行指定一个URL让浏览器载入.</td>
+				</tr>
+				<tr>
+					<td>default-style</td>
+					<td>指定页面优先使用的样式表.对应的content属性值应与同一文档中的某个style元素或link元素的title属性值相同</td>
+				</tr>
+				<tr>
+					<td>content-type</td>
+					<td>另外一种声明HTML页面所用字符编码的方法</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h2>供style元素的media属性使用的规定设备值</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>设备</td>
+				<td>说明</td>
+			</tr>
+			
+		</thead>
+		<tbody>
+			<tr>
+				<td>aural</td>
+				<td>将样式适用于语音合成器</td>
+			</tr>
+			<tr>
+				<td>braille</td>
+				<td>将设备用于盲文设备</td>
+			</tr>
+			<tr>
+				<td>handheld</td>
+				<td>将样式用于手持设备</td>
+			</tr>
+			<tr>
+				<td>projection</td>
+				<td>将样式用于投影机</td>
+			</tr>
+			<tr>
+				<td>print</td>
+				<td>将样式用于打印预览和打印页面时</td>
+			</tr>
+			<tr>
+				<td>screen</td>
+				<td>将样式用于计算机显示器屏幕</td>
+			</tr>
+			<tr>
+				<td>tty</td>
+				<td>将样式用于电传打字机之类的等宽设备</td>
+			</tr>
+			<tr>
+				<td>tv</td>
+				<td>将样式用于电视机</td>
+			</tr>
+			<tr>
+				<td>all</td>
+				<td>将样式用于所有设备(默认值)</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>浏览器负责解释设备归类.</p>
+	<p>核实针对浏览器对特定设备的解释与自己是否一致很是必要.</p>
+
+	<h3>让style元素的对象更加具体</h3>
+	<p>使用media来设定浏览器窗口不同宽度的不同样式</p>
+
+	<h3>指定外部资源</h3>
+	<p>link元素可以在HTML文档和外部资源中建立联系</p>
+
+	<table border="1">
+		<caption>link元素</caption>
+		<thead>
+			<tr>
+				<td>属性</td>
+				<td>说明</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>href</td>
+				<td>指定link元素指向的资源的URL</td>
+			</tr>
+			<tr>
+				<td>hreflang</td>
+				<td>说明所关联资源使用的语言</td>
+			</tr>
+			<tr>
+				<td>media</td>
+				<td>说明所关联的内容用于哪种设备</td>
+			</tr>
+			<tr>
+				<tr>rel</tr>
+				<tr>说明文档与所关联资源的关系类型</tr>
+			</tr>
+			<tr>
+				<td>sizes</td>
+				<td>指定图标的大小</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>指定所关联资源的MIME类型,如 text/CSS image/x-icon</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>rel属性值的全面介绍: <a href="https://www.iana.org/assignments/link-relations/link-relations.xml">Link Relations</a></p>
+
+	<table border="1">
+		<caption>link 元素的局部属性</caption>
+		<thead>
+			<tr>
+				<td>属性</td>
+				<td>说明</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>alternate</td>
+				<td>链接到文档的替代版本,比如另一种语言的译本</td>
+			</tr>
+			<tr>
+				<td>author</td>
+				<td>链接到文档的作者</td>
+			</tr>
+			<tr>
+				<td>help</td>
+				<td>链接到当前文档的说明文档</td>
+			</tr>
+
+			<tr>
+				<td>icon</td>
+				<td>指定图标资源</td>
+			</tr>
+			<tr>
+				<td>license</td>
+				<td>链接到当前文档的相关许可证</td>
+			</tr>
+			<tr>
+				<td>pingback</td>
+				<td>指定一个回探服务器.从其他网站链接到博客的时候它能自动得到通知</td>
+			</tr>
+			<tr>
+				<td>prefetch</td>
+				<td>预先获得一个资源</td>
+			</tr>
+			<tr>
+				<td>stylesheet</td>
+				<td>载入外部样式表</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h3>载入样式表 --- DONE</h3>
+	<h3>为页面定义网站标志</h3>
+	<h3>预先获得关联的资源</h3>
+	<p>Elisp<a href="http://caiorss.github.io/Emacs-Elisp-Programming/">资源</a></p>
+
+	<h2>使用脚本元素</h2>
+	<p>script 元素一般放在 head中,推荐放在这,便于查看</p>
+
+	<h3>script元素</h3>
+	<p>局部属性包含 type src defer async charset</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>属性</td>
+				<td>说明</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>type</td>
+				<td>表示引用或定义的脚本的类型</td>
+			</tr>
+			<tr>
+				<td>src</td>
+				<td>指定外部脚本文件的URL</td>
+			</tr>
+			<tr>
+				<td>defer</td>
+				<td>设定脚本的执行方式,此属性只能和src属性一同使用</td>
+			</tr>
+			<tr>
+				<td>async</td>
+				<td>设定脚本的执行方式,此属性只能和src属性一同使用</td>
+			</tr>
+			<tr>
+				<td>charset</td>
+				<td>说明脚本文件所用字符编辑,该属性只能和src属性一同使用</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h3>定义文档内嵌脚本</h3>
+	<h3>载入外部脚本库</h3>
+	<h3>推迟脚本的执行</h3>
+	<p>defer属性告诉浏览器要等页面载入和解析完毕后才能执行脚本</p>
+
+	<!-- 假设脚本放置在你期望解析的HTML文档内容之前,
+
+		 浏览器的策略是一遇到script元素就会暂停处理HTML文档,会载入脚本文件并执行其中的脚本.
+
+		 脚本执行完毕,浏览器继续解析HTML,code元素也随之出现.但此时脚本已经执行完毕了,不会做出任何改变.
+
+		 所以需要将 script 放置到文档最后
+    -->
+
+	<p>接下来我会去学习<code id="elisp">Emacs Lisp</code></p>
+	<p>通过改变script元素的位置解决脚本的时间安排问题</p>
+    <script type="text/javascript" src="js/e2.js"></script>
+
+    <p>我们很显然想规避这个问题,使用HTML5 的 defer属性可以让脚本的加载和执行推迟到HTML文档中的所有元素都已得到解析之后</p>
+
+    <p>使用带defer属性的script元素</p>
+
+    <h3>异步执行脚本</h3>
+    <p>async属性</p>
+
+    <p>浏览器遇到script元素时的默认行为是在加载和执行脚本的同时暂停处理页面.</p>
+    <p>默认情况下,各个script元素依次(按照其定义的次序)同步(脚本加载和执行过程中不再管别的事情)执行</p>
+    <p>某类脚本可以使用async属性提高其性能.</p>
+    <p>例如: 跟踪脚本(tracking script),这类脚本可以汇报用户的网站访问记录以便广告公司根据用户的浏览习惯定制和投放广告,或者收集网站访问者的统计数据以供分析</p>
+    <p>这类脚本跟网站本身并没有一毛钱关系,一般不需要与HTML文档中的元素互相作用.为等待他们加载然后向自己的服务器发回报告而推迟显示页面没有任何意义.</p>
+
+    <p>使用了async属性后,浏览器在继续解析HTML文档中的其他元素的同时,异步加载和执行脚本.如果用的好,会大大提高整体加载性能.</p>
+
+    <h3>使用async属性,也就是说页面中的脚本可能不会再按定义他们的次序执行了.请务必保证它是唯一的,不要污染其他脚本(比如: 调用其他脚本中定义的函数或值).</h3>
+
+   <h3>noscript元素</h3> 
+
+</body>
+</html>

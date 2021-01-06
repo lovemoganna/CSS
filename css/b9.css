@@ -1,0 +1,7 @@
+.item9 p{
+	color: white;
+	background: grey;
+	border: medium dashed black;
+	border-color: red;
+	padding: 10px;
+}

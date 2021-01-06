@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>组织内容</title>
+	<style type="text/css" media="all">
+		@import url("https://fonts.googleapis.com/css?family=Cairo|Roboto|Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900");
+
+		:root {
+			--font-family: "Roboto","Noto Sans SC","Noto Serif SC",sans-serif;
+		}
+		html{
+			font-family: var(--font-family);
+		}
+		.language {
+			border: thin solid black;
+			padding: 1px;
+		}
+		.item3 {
+			background: grey;
+			color: white;
+			border: thin solid black;
+			padding: .2em;
+			width: 300px;
+		}
+		.hrStyle{
+			display: block;
+			margin-before: 0.5em;
+			margin-after: 0.5em;
+			-moz-margin-start: auto;
+			-moz-margin-end: auto;
+			border-style: inset;
+			border-width: 1px;
+		}
+		.ulStyle {
+			list-style-type: circle;
+		}
+		body{
+			counter-reset: OuterItemCount 5 InnerItemCount;
+		}
+
+		#outerlist > li:before {
+			content: counter(OuterItemCount) ". ";
+			/* 外层列表的编号始于7,步长跌增为2 */
+			counter-increment: OuterItemCount 2;
+		}
+
+		ul.innerlist > li:before {
+			content: counter(InnerItemCount,lower-alpha) ". ";
+			counter-increment: InnerItemCount;
+		}
+	</style>
+	
+</head>
+<body>
+	<h2>组织内容</h2>
+	<p>本例用来组织相关内容的HTML元素,它们能够给予文档内容更多的结构和含义.</p>
+	<h3>为什么要对内容分组</h3>
+	<p>html要求浏览器将连在一起的几个空白字符折算为一个空格.一般情况下,没啥问题,因为可以把HTML文档的布局与文档内容在浏览器窗口中的布局分开.</p>
+
+	<p>混乱之始</p>
+
+	<div class="item1">
+		
+		I like apples and oranges.
+
+		I also like bananas,mangoes,cherries,apricots,plums,peaches,and grapes. You can see other fruites I like <a href="fruitelist,html">here</a>.
+
+		<strong>Warning:</strong> Eating too many oranges can give you heart burn.
+
+		My favorite kind of oranges is the mandarin,properly known 
+		as <i>citrus reticulata</i>.
+		Oranges at my local store const <s>$1 each</s> $2 for 3.
+
+		The <abbr title="Florida Department of Citrus">FDOC</abbr> regulates the Florida citrus industry.
+
+		I still remember the best apple I ever tested.
+		I bought it at <time datetime="15:00">3 o'clock</time>
+		on <time datetime="1212-12-7">December 7th</time>.
+	</div>
+
+	<p>上面div元素中的文字散布在许多行上.有些行设置了缩进,并且在行组之间还有换行.但浏览器会忽略这些结构,将内容全部显示在一行上.</p>
+	<p>下面会使用一些元素将相关内容组织在一起,为本当建立结构.从简单的段落到复杂的列表,内容的组织形式多种多样.</p>
+
+
+	<h3>建立段落</h3>
+	<p>p元素代表段落.段落包含着一个或者多个相关句子,这些句子围绕的时一个观点或论点.组成一个段落的句子也可以涉及多个论点,但它们都有一些共同的主题.</p>
+	<p>下面是测试案例</p>
+	<div class="item2">
+		<p style="display: block;margin-before: 1em;margin-after: 1em;-moz-margin-start: 0;-moz-margin-end: 0">
+			I like apples and oranges.
+
+			I also like bananas,mangoes,cherries,apricots,plums,peaches,and grapes. You can see other fruites I like <a href="fruitelist,html">here</a>.
+		</p>
+
+		<p>	
+			<strong>Warning:</strong> Eating too many oranges can give you heart burn.
+		</p>
+
+		<p>
+			My favorite kind of oranges is the mandarin,properly known 
+			as <i>citrus reticulata</i>.
+			Oranges at my local store const <s>$1 each</s> $2 for 3.
+		</p>
+		<p>
+			The <abbr title="Florida Department of Citrus">FDOC</abbr> regulates the Florida citrus industry.
+		</p>
+
+		<p>
+			I still remember the best apple I ever tested.
+			I bought it at <time datetime="15:00">3 o'clock</time>
+			on <time datetime="1212-12-7">December 7th</time>.
+		</p>
+	</div>
+	<p>尽管p元素将相关句子组织在一起,为内容提供了一些结构,但p元素内部的多个连续空白字符仍然会被合并为一个空格看.</p>
+
+	<h3>使用div元素</h3>
+	<p>div元素没有具体的含义.它的含义是由全局属性提供的,通常用的是 class或id属性.</p>
+	<p>在不到万不得已的时候,不要先使用div元素,应该优先考虑那些具有语义重要性的元素.HTML5文档更加考虑语义问题.</p>
+	<p>div元素相当于流元素中的span.没有具体含义,可以用来在文档中添加自定义的结构.建立自定义结构的缺点在于,只有你自己知道自己干了什么东西,别人不了解.</p>
+
+	<div class="item3">
+		<p style="display: block;margin-before: 1em;margin-after: 1em;-moz-margin-start: 0;-moz-margin-end: 0">
+			I like apples and oranges.
+
+			I also like bananas,mangoes,cherries,apricots,plums,peaches,and grapes. You can see other fruites I like <a href="fruitelist,html">here</a>.
+		</p>
+
+		<p>	
+			<strong>Warning:</strong> Eating too many oranges can give you heart burn.
+		</p>
+
+		<p>
+			My favorite kind of oranges is the mandarin,properly known 
+			as <i>citrus reticulata</i>.
+			Oranges at my local store const <s>$1 each</s> $2 for 3.
+		</p>
+		<p>
+			The <abbr title="Florida Department of Citrus">FDOC</abbr> regulates the Florida citrus industry.
+		</p>
+
+		<p>
+			I still remember the best apple I ever tested.
+			I bought it at <time datetime="15:00">3 o'clock</time>
+			on <time datetime="1212-12-7">December 7th</time>.
+		</p>
+	</div>
+
+	<p>你可以看到上例div元素知识将几个不同类型的元素组织在一起以便统一应用样式.原理是依赖样式继承机制让其发挥作用.</p>
+
+	<h3>使用预先编排好格式的内容</h3>
+	<p>pre元素可以改变浏览器处理内容的方式,组织并合并空白字符,让源文档中的格式得以保留.</p>
+	<p>最好不要使用这个元素,因为它削弱了通过使用元素和样式来控制呈现这一机制的灵活性.</p>
+	<p>测试案例</p>
+	<div class="item4">
+		<pre>
+			<code>
+				var fruits = ["apples","oranges","mangoes","cherries"]
+
+				for (var i = 0;i < fruits.length; i++){
+				document.writeln("I Like " +fruits[i]);
+			}
+		</code>
+	</pre>
+</div>
+
+<p>上面我们使用 pre 元素标记了一段JS代码.由于并非位于一个script中,所以此段代码并不会被执行,但其格式会保留.</p>
+<p>浏览器不会重新编排pre元素中的内容格式.所以每一行开头的那些空格或制表符都会显示在浏览器窗口中.</p>
+
+<h3>引用他处内容</h3>
+<p>blockquote元素表示引自他处的一片内容.该元素用途与q元素类型,但是通常用在要引用内容更多的情况下.</p>
+<p>下面是测试案例</p>
+<p>一年多没见的好朋友重逢。</p>
+<blockquote cite="https://weibo.com/6152576398/JAQrHb70t?from=page_1005056152576398_profile&wvr=6&mod=weibotime&type=comment">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+</blockquote>
+<p>	
+	<strong>Warning:</strong> Eating too many oranges can give you heart burn.
+</p>
+<p>从上面的空行可见,浏览器会忽略blockquote元素中的内容的格式.要在引用的内容中建立结构,可以使用其他组织元素,如p或者hr.</p>
+
+<h3>添加主题分隔</h3>
+<p>hr元素代表段落级别的主题分隔(paragraph-level thematic break).在H5中,hr元素代表着向另一个相关主题的转换.</p>
+
+<p>下面是测试案例</p>
+<p>一年多没见的好朋友重逢。</p>
+<blockquote cite="https://weibo.com/6152576398/JAQrHb70t?from=page_1005056152576398_profile&wvr=6&mod=weibotime&type=comment">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+	<hr class="hrStyle">
+	哈哈哈哈,很激动的抱一下,然后分开,一起跳跳跳[允悲][允悲][允悲]这个年龄的孩子都这样吗？ 
+</blockquote>
+
+<h2>将内容组织为列表</h2>
+
+<h3>ol元素</h3>
+<p>ol元素表示有序列表</p>
+
+<p>用ol元素生成一个简单的列表.下面是一个大写罗马字母表示方法.</p>
+<div class="item5">
+	I like:
+	<ol start="3" type="I">
+		<li>bananas</li>
+		<li>mangoes</li>
+		<li>cherries</li>
+		<li>plums</li>
+		<li>grapes</li>
+	</ol>
+</div>
+
+<p>列表项目可以通过ol元素定义的属性加以控制.start属性设定的是列表首项的编号值.如果不用这个属性,那么首项的编号为1.</p>
+<p>type属性用来设定显示在各列表项旁的编号的类型.下面是该属性支持的值.</p>
+
+<table border="1">
+	<caption>ol元素的type属性支持的值</caption>
+	<thead>
+		<tr>
+			<td>值</td>
+			<td>说明</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>十进制数</td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>小写拉丁字母</td>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>大写拉丁字母</td>
+		</tr>
+		<tr>
+			<td>i</td>
+			<td>小写罗马字母</td>
+		</tr>
+		<tr>
+			<td>I</td>
+			<td>大写罗马字母</td>
+		</tr>
+	</tbody>
+</table>	
+
+<h3>ul元素</h3>
+<p>ul元素表示无序列表,与ol元素一样,ul元素中的列表项用li元素表示.</p>
+<p>无序列表的每个项目都会显示一个项目符号,符号的样式可以有 list-style-type 来控制.</p>
+<div class="item6">
+	I like:
+	<ul class="ulStyle">
+		<li>bananas</li>
+		<li>mangoes</li>
+		<li>cherries</li>
+		<li>plums</li>
+		<li>grapes</li>
+	</ul>
+</div>
+
+<h3>li元素</h3>
+<p>li元素表示列表中的项目,它可以与ul ol menu 元素搭配使用.</p>
+<p>li元素的value值可以用来生成不连续的有序列表</p>
+
+<div class="item7">
+	<ol>
+		<li>bananas</li>
+		<li value="4">mangoes</li>
+		<li>cherries</li>
+		<li value=" 5">plums</li>
+		<li>grapes</li>
+	</ol>
+</div>
+
+<h3>生成说明列表</h3>
+<p>说明列表包含着一系列术语/说明组合(也即一系列附带定义的术语).</p>
+<p>定义说明列表要用到三个元素: dl dt 和 dd元素.这些元素没有定义局部属性,在H5里面没有什么变化.</p>
+
+	<table border="1">
+		<caption>说明列表中的元素</caption>
+		<thead>
+			<tr>
+				<td>元素</td>
+				<td>说明</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>dl</td>
+				<td>表示说明列表</td>
+			</tr>
+			<tr>
+				<td>dt</td>
+				<td>表示说明列表中的术语</td>
+			</tr>
+			<tr>
+				<td>dd</td>
+				<td>表示说明列表中的定义</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="item8">
+		<dl>
+			<dt>Apple</dt>
+			<dd>The apple is the pomaceous fruit of the apple tree</dd>
+			<dd><i>Malus domestica</i></dd>
+			<dt>Banana</dt>
+			<dd>The banana is the parthenocarpic fruit of the banana tree</dd>
+			<dd><i>Musa acuminata</i></dd>
+			<dt>Cherry</dt>
+			<dd>The cherry is the stone fruit of the genus <i>Prunus</i></dd>
+		</dl>
+	</div>
+
+	<h3>生成自定义列表 --- 使用CSS特性的自定义列表</h3>
+	<p>counter特性和:before选择器的使用</p>
+	<div class="item9">
+		<ul id="outerlist" style="list-style-type: none">
+			<li>bananas</li>
+			<li>mangoes,including:</li>
+			<ul class="innerlist">
+				<li>Haden mangoes</li>
+				<li>Keitt mangoes</li>
+				<li>Kent mangoes</li>
+			</ul>
+			<li>cherries</li>
+			<li>pluns,including:
+				<ul class="innerlist">
+					<li>Elephant Heart plums</li>
+					<li>Stanley plums</li>
+					<li>Seneca plums</li>
+				</ul>
+			</li>
+			<li>peaches</li>
+			<li>grapes</li>
+		</ul>
+	</div>
+
+	<h3>使用插图</h3>
+	<p>H5中定义插图: 一个独立的内容单元,可带标题</p>
+	<div class="item10">
+		<figure>
+			<figcaption>Listing 23. Using the code element</figcaption>
+			<code>
+				var fruits = ["apples","oranges","mangoes","cherries"]
+
+				for (var i = 0;i < fruits.length; i++){
+				document.writeln("I Like " +fruits[i]);
+			</code>
+		</figure>
+	</div>
+</body>
+</html>

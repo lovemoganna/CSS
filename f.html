@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>标记文字</title>
+	<link rel="stylesheet" href="css/e1.css">
+	<style type="text/css" media="all">
+		@import url("https://fonts.googleapis.com/css?family=Cairo|Roboto|Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900");
+
+		:root {
+			--font-family: "Roboto","Noto Sans SC","Noto Serif SC",sans-serif;
+		}
+		html{
+			font-family: var(--font-family);
+		}
+		.language {
+			border: thin solid black;
+			padding: 1px;
+		}
+	</style>
+	</head>
+	<body>
+		<p class="container">你好世界</p>
+		<h1>文本层面的元素</h1>
+		<p>HTML5规范: 使用元素应该完全从元素的语义出发</p>
+
+		<h2>生成超链接</h2>
+		<p>a元素的局部属性: href hreflang media rel target type</p>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<td>属性</td>
+					<td>说明</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>href</td>
+					<td>指定a元素所指资源的URL</td>
+				</tr>
+				<tr>
+					<td>hreflang</td>
+					<td>说明所链接资源使用的语言</td>
+				</tr>
+				<tr>
+					<td>media</td>
+					<td>说明所链接资源用于哪种设备.</td>
+				</tr>
+				<tr>
+					<td>rel</td>
+					<td>说明文档与所链接资源的关系类型</td>
+				</tr>
+				<tr>
+					<td>target</td>
+					<td>指定用于打开链接资源的浏览环境</td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td>说明所链接资源的MIME属性,如 text/html</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>生成指向外部的超链接</h3>
+		<div>I Like <a href="emacs.org">Emacs Lisp</a>,you could </div>
+
+		<h3>使用s元素</h3>
+		<p>s元素用来表示一段文字不再正确或准确.</p>
+		<p>习惯样式是在文字上显示一条删除线.</p>
+		<div class="item2">
+			<em>I</em> like <b>EMACS</b> and <b>Scheme</b>.
+			My favorite kind of Scheme is the chezscheme,properly know as the book of <i>The Scheme Programming Language</i>.So i decided to give up learn <s>java</s>.
+		</div>
+
+		<h3>表示重要的文字</h3>
+		<p>strong元素表示一段重要的文字.</p>
+		<p>样式基本一样,但是b元素并未赋予其包围的文字任何重要性.</p>
+		<p>所以在标记内容的时候要注意选择正确的元素.</p>
+		<strong>Warning:</strong> 明天TM贼冷.
+
+		<h3>为文字添加下划线</h3>
+		<p>u元素让一段文字从周围内容中凸显出来,但并不表示强调或其重要性有所增加.</p>
+		<p>u元素以前只具有呈现方面的作用(为文字加上下划线),没有实际的语义.即呈现性元素,其效果就是为文字添加下划线.</p>
+		<p>不要随便用CSS来篡改u元素的这种用途.</p>
+		<p>在样式方面,跟a元素表现一样,为防止混淆,应尽量避免使用u元素.</p>
+
+		<div class="item3">
+			<p><strong>Warning: </strong>明天TM贼冷,你要<u style="color: red">出去玩</u>,等着被带走吧.</p>
+		</div>
+
+		<h3>添加小号字体内容</h3>
+		<p>small元素表示小号字体内容(fine print),常用于免责声明和澄清声明.</p>
+		<p>北京疫情有点搞哦,休假在家休,跟没休有啥区别? <small>无聊至极</small></p>
+
+		<h3>添加上标和下标</h3>
+		<p>sub和sup元素分别永远忽表示下标和上标.</p>
+		<p>主要是为了适配某些语言,在数学中,一个简单的表达式也会用到上标和下标.</p>
+		<div class="item4">
+			<p>The point x<sub>10</sub> is the 10<sup>th</sup></p>
+		</div>
+
+		<h3>换行</h3>
+		<p>使用br元素</p>
+		<p>做人不要太攀比，要比就比谁早起，<br>
+			你早起我早起，咱俩迟早在一起，<br>
+		你不睡我不睡，你看咱俩配不配</p>
+		<h3>指明可以安全换行的建议位置</h3>
+		<p>wbr元素是HTML5中新增的,用来表示长度超过当前浏览器窗口的内容适合在此换行,究竟换不换行由浏览器决定.</p>
+		<p>wbr元素只不过是对恰当的换行位置的建议,采不采取,由浏览器决定.</p>
+		<div class="item5">
+			<p>把浏览器窗口调小一点,就可以看到效果了.</p>
+			<p>
+				钓鱼穷三年,玩鸟毁一生,Super:asdasdasdasdasdaksjhdgaskjdhgauksddsadasdjasjdkahsk --- by 虎扑.
+				一根葱，立一冬 <code>大烟糕子就酒</code>,小命立马没有.
+			</p>
+			<p>
+				钓鱼穷三年,玩鸟毁一生,Super<wbr>califasdasdjhkasdjaskdjaskdjaskdjaskdjaskdajsd</wbr> --- by 虎扑.一根葱，立一冬<code>大烟糕子就酒</code>,小命立马没有
+			</p>
+		</div>
+
+		<h3>表示输入和输出</h3>
+		<table border="1">
+			<caption>用于输入和输出的文字元素</caption>
+			<thead>
+				<tr>
+					<td>元素</td>
+					<td>说明</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>code</td>
+					<td>表示计算机代码片段</td>
+				</tr>
+				<tr>
+					<td>var</td>
+					<td>在编程语境中表示变量,也可以表示一个供读者在想象中插入一个指定值得占位符.</td>
+				</tr>
+				<tr>
+					<td>samp</td>
+					<td>表示程序或计算机系统的输出</td>
+				</tr>
+				<tr>
+					<td>kbd</td>
+					<td>表示用户输入</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>使用 code var samp kbd 元素</h3>
+		<div class="item6">
+			<p>
+				<code>var fruits = ["apples","oranges","mangoes","cherries"];<br>
+				document.writeln("I like "+fruits.length," fruits");</code>
+			</p>
+			<p>The variable in this example is <var>fruits</var></p>
+			<p>The output from the code is: <samp>I like 4 fruits</samp></p>
+			<p>When prompted for my favorite fruit,I typed: <kbd>cherries</kbd></p>
+		</div>
+
+		<h3>使用标题引用 引文 定义和缩写</h3>
+		<p>abbr元素用来表示缩写.其title属性表示的时该缩写的完整词语.</p>
+		<div class="item7">
+			<p>可以悬浮看下,已经缩写的话.</p>
+			<p>
+				我手速还行.<abbr title="打字速度还行,没挑战过五笔.">学习五笔</abbr>
+			</p>
+		</div>
+
+		<p>dfn元素表示定义中的术语,即用来解释一个词(或短语)的含义的句子中的词(或短语)</p>
+		<p>可以悬浮看下,已经缩写的术语</p>
+		<p>
+			<dfn title="牛顿第三定律">牛顿第三定律</dfn> 的常见表述是：相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。该定律是由艾萨克·牛顿在1687年于《自然哲学的数学原理》一书中提出的。牛顿第三运动定律和第一、第二定律共同组成了牛顿运动定律，阐述了经典力学中基本的运动规律。 <br>
+			<br>
+			<dfn><abbr title="牛顿第三定律">牛顿第三定律</abbr></dfn> 的常见表述是：相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。该定律是由艾萨克·牛顿在1687年于《自然哲学的数学原理》一书中提出的。牛顿第三运动定律和第一、第二定律共同组成了牛顿运动定律，阐述了经典力学中基本的运动规律。
+		</p>
+
+		<h3>引用来自其他处的内容</h3>
+		<p>q元素表示引自他处的内容.</p>
+		<p>
+			<q cite="https://bbs.hupu.com/40061306.html">这里引用的是虎扑<dfn title="散落人间的高级句子">人上人个猫</dfn>的链接和标题.</q>
+		</p>
+
+		<h3>引用其他作品的标题</h3>
+		<p>cite 元素表示所引用作品(如图书,文章,电影和诗歌)的标题.基本样式是斜体.</p>
+		<p>搞一个电影测试,world war z</p>
+		<p>
+			僵尸片 <abbr title="world war z">僵尸世界大战</abbr> 讲的是一个僵尸片.
+		</p>
+		<p>
+			<q cite="https://www.iqiyi.com/v_19rrhahzhk.html?fv=p_08_01&vfm=m_332_bing">
+				<dfn title="world war z">僵尸世界大战</dfn> 讲的是一个僵尸片.
+			</q>
+		</p>
+		<p>我最喜欢的电影是 <cite>我最喜欢的电影</cite> by me said.</p>
+
+		<h3>使用语言元素</h3>
+		<p>有5个HTML元素的用途是为使用非西方语言提供支持的.</p>
+		<p>注音符号(ruby character)是用来帮助读者掌握表意语言文字正确发音的符号,位于这些文字上方或右方.</p>
+		<p>ruby元素表示一段包含注音符号的文字.</p>
+		<p>ruby元素需要和rt元素和rp元素搭配使用.rt元素用来标注注音符号,rp元素用来标记供不支持注音符号特性的浏览器,显示在注音符号前后的括号.</p>
+		<p>测试样例如下:</p>
+		<p style="font-size:30px">
+			<ruby>魑<rp>(</rp><rt>chī</rt><rp>)</rp></ruby>
+			<ruby>魅<rp>(</rp><rt>mèi</rt><rp>)</rp></ruby>
+			<ruby>魍<rp>(</rp><rt>wǎng</rt><rp>)</rp></ruby>
+			<ruby>魉<rp>(</rp><rt>liǎng</rt><rp>)</rp></ruby>
+		</p>
+		<p>快速制作 --- 文字转拼音<a href="http://www.aies.cn/pinyin2.htm">在线汉字转拼音带声调</a></p>
+
+		<h3>bdo元素</h3>
+		<p>bdo元素可以用来撇开默认的文字方向设置,明确地指定其内容中文字的方向.</p>
+		<div class="item8">
+		<p>This is left-to-rightL <bdo dir="ltr">文字从左至右</bdo></p>
+		<p>This is left-to-rightL <bdo dir="rtl">文字从右至左</bdo></p>
+		</div>
+
+		<h3>bdi元素</h3>
+		<p>bdi元素表示一段出于文字方向考虑而与其他内容隔开来的文字.</p>
+		<p>这个元素适用于想要显示内容的文字方向未知的情况.一般用来矫正阿拉伯文字.</p>
+		<div class="item9">
+			<p>أحبك اللوم : 2 oranges</p>
+			<p>这是矫正好的阿拉伯文字:<bdi>أحبك اللوم </bdi>: 2 oranges</p>
+			<p>Joe: 6 apples</p>
+			<p><bdi>Joe</bdi>: 6 apples</p>
+		</div>
+
+		<h3>表示一段一般性的内容</h3>
+		<p>span元素本身没有任何含义.它可以用来把一些全局属性应用到一段内容上.</p>
+		<div class="item10">
+			I Like <span class="language">Eamcs lisp</span> and <span class="language">linux bash shell</span>for fun.
+		</div>
+
+		<h3>突出显示文本</h3>
+		<p>mark 元素是HTML5中新增,用来表示因为与某段上下文相关而被突出显示的一段文字.</p>
+		<div class="item11">
+			I would like a <mark>pair</mark> of <mark>pears</mark>
+		</div>
+
+		<h3>表示添加和删除的内容</h3>
+		<p>ins元素和del元素可以分别用来表示文档中添加和删除的文字.</p>
+		<div class="item12">
+			<del>I can <mark>sea</mark> the <mark>see</mark></del>
+			<br>
+			<ins>I can <mark>see</mark> the <mark>sea</mark></ins>
+		</div>
+
+		<h3>表示时间和日期</h3>
+		<p>time元素可以用来表示时间和日期.</p>
+		<p><a href="https://tools.ietf.org/html/rfc3339">rfc描述</a></p>
+		<div class="item13">
+			I bought it at <time datetime="15:00">3 o'clock</time> on <time datetime="1986-12-12">December 7th</time>.
+		</div>
+
+		<p>该使用什么元素要根据他们的含义而不是习惯样式来选择,如果文档内容标记的不正确或不一致,则应用到内容上的CSS样式则可能出问题.</p>
+	</body>
+	</html>

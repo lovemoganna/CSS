@@ -1,0 +1,157 @@
+/* CSS颜色表示
+现在书写一些颜色表示
+颜色名称
+十六进制表示
+十进制表示
+*/
+
+.item10 p{
+	margin: 0px;
+	padding: 0px;
+}
+.item10 p.p1{
+
+	background: black;
+	width: 100px;
+}
+.item10 p.p15{
+
+	background: silver;
+	width: 100px;
+}
+.item10 p.p2{
+
+	background: grey;
+	width: 100px;
+}
+.item10 p.p3{
+
+	background: white;
+	width: 100px;
+}
+
+.item10 p.p4{
+
+	background: maroon;
+	width: 100px;
+}
+.item10 p.p5{
+
+	background: red;
+	width: 100px;
+}
+.item10 p.p6{
+
+	background: purple;
+	width: 100px;
+}
+.item10 p.p7{
+
+	background: fuchsia;
+	width: 100px;
+}
+.item10 p.p8{
+
+	background: green;
+	width: 100px;
+}
+.item10 p.p9{
+
+	background: lime;
+	width: 100px;
+}
+.item10 p.p10{
+
+	background: olive;
+	width: 100px;
+}
+
+.item10 p.p11{
+
+	background: navy;
+	width: 100px;
+}
+
+.item10 p.p12{
+
+	background: blue;
+	width: 100px;
+}
+.item10 p.p13{
+
+	background: yellow;
+	width: 100px;
+}
+.item10 p.p14{
+
+	background: teal;
+	width: 100px;
+}
+
+.item10 p.p16{
+
+	background: aqua;
+	width: 100px;
+}
+
+.item10 p.p17{
+
+	background: darkgray;
+	width: 100px;
+}
+
+.item10 p.p18{
+
+	background: darkslategray;
+	width: 100px;
+}
+.item10 p.p19{
+
+	background: dimgray;
+	width: 100px;
+}
+
+.item10 p.p20{
+
+	background: grey;
+	width: 100px;
+}
+.item10 p.p21{
+
+	background: lightgrey;
+	width: 100px;
+}
+.item10 p.p22{
+
+	background: lightslategray;
+	width: 100px;
+}
+.item10 p.p23{
+
+	background: slategray;
+	width: 100px;
+}
+
+.item10 p.p24{
+
+	background: rgb(112, 128, 144);
+	width: 100px;
+}
+
+.item10 p.p25{
+
+	background: rgba(112, 128, 144, 0.4);
+	width: 100px;
+}
+
+.item10 p.p26{
+
+	background: hsl(120, 100%, 22%);
+	width: 100px;
+}
+
+.item10 p.p27{
+
+	background: hsla(120, 100%, 22%, 0.4);
+	width: 100px;
+}

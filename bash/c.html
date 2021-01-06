@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>核心JavaScript特性</title>
+</head>
+
+<body>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<td>问题</td>
+				<td>解决方案</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>定义文档内嵌脚本程序</td>
+				<td>使用 script 元素</td>
+			</tr>
+
+			<tr>
+				<td>立即执行一条程序语句</td>
+				<td>将语句直接放在script元素内</td>
+			</tr>
+			<tr>
+				<td>定义JS函数</td>
+				<td>使用function函数</td>
+			</tr>
+			<tr>
+				<td>定义基本类型的变量</td>
+				<td>使用var关键字</td>
+			</tr>
+			<tr>
+				<td>创建对象</td>
+				<td>使用 new Object() 或者 对象字面量语法</td>
+			</tr>
+
+			<tr>
+				<td>给对象添加方法</td>
+				<td>新建一个属性，再将一个函数赋给它</td>
+			</tr>
+			<tr>
+				<td>获取或设置对象的属性值</td>
+				<td>使用有圆点或者数组索引符号表示法</td>
+			</tr>
+
+			<tr>
+				<td>枚举对象中的属性</td>
+				<td>使用for...in语句</td>
+			</tr>
+			<tr>
+				<td>给对象添加属性或者方法</td>
+				<td>将一个值赋给所需属性名</td>
+			</tr>
+			<tr>
+				<td>删除对象的一个属性</td>
+				<td>使用delete关键字</td>
+			</tr>
+			<tr>
+				<td>判断对象是否具有某个属性</td>
+				<td>使用in表达式</td>
+			</tr>
+			<tr>
+				<td>判断两个对象的值是否相等(不考虑类型差别)</td>
+				<td>使用相等运算符 ==</td>
+			</tr>
+			<tr>
+				<td>判断两个对象是否类型和值都相同</td>
+				<td>使用等同运算符 ===</td>
+			</tr>
+
+			<tr>
+				<td>显式类型转换</td>
+				<td>使用Number或者String函数</td>
+			</tr>
+			<tr>
+				<td>创建数组</td>
+				<td>使用 new Array()或数组字面量</td>
+			</tr>
+			<tr>
+				<td>读取数组内容</td>
+				<td>使用索引符号表示法获取数组中指定位置元素的值或将新值赋给它</td>
+			</tr>
+			<tr>
+				<td>枚举数组内容</td>
+				<td>使用for循环</td>
+			</tr>
+			<tr>
+				<td>处理错误</td>
+				<td>使用 try...catch语句</td>
+			</tr>
+			<tr>
+				<td>比较null和undefined值</td>
+				<td>将值转换为boolean类型,或在需要同等对待null和undefined时使用相等运算符 ==,在要区别对待他们时使用恒等运算符 ===</td>
+			</tr>
+
+		</tbody>
+		<tfoot></tfoot>
+	</table>
+
+	<h2>使用JavaScript语句内嵌脚本</h2>
+
+	<script type="text/javascript">
+		document.writeln("hello JS")
+	</script>
+
+	<h2>定义和使用函数</h2>
+
+	<script type="text/javascript">
+		function myFunc(){
+			document.writeln("This is a statement.")
+		}
+		myFunc()
+	</script>
+
+	<h2>定义带参数的函数</h2>
+
+	<script type="text/javascript">
+		function myFunc(name,weather){
+			document.writeln("Hello "+name+".")
+			document.writeln("It is "+ weather+ " today.")
+		}
+		myFunc("luoyu","sunny")
+	</script>
+
+	<h2>定义会返回结果的函数</h2>
+	<script type="text/javascript">
+		function myFunc(name) {
+			return('Hello '+name +".")
+		}
+		document.writeln(myFunc("Revolt"))
+	</script>
+
+	<h2>使用变量和类型</h2>
+	<p>全局变量和局部变量</p>
+	<script type="text/javascript">
+		var current_state="learning"
+
+		function myFunc(state){
+			var current_state="go to play"
+			return("Now I Ready to "+state)
+		}
+
+		document.writeln(myFunc(current_state))
+	</script>
+	<br>
+	<script type="text/javascript">
+		document.writeln("Now I'm  "+current_state)
+	</script>
+
+	<h2>使用基本类型</h2>
+	<p>字符串(string) 数值类型(number) 布尔类型(boolean)</p>
+
+	<h3>定义字符串变量</h3>
+	<script type="text/javascript">
+		var firstString = "黑白"
+		var secondString = "瑞文"
+		document.writeln(firstString,secondString)
+	</script>
+
+	<h3>定义布尔变量</h3>
+	<script type="text/javascript">
+		var firstBool = true
+		var SecondBool = false
+
+		document.writeln(firstBool," ",SecondBool)
+	</script>
+
+	<h3>定义数值变量</h3>
+	<script type="text/javascript">
+		var daysInWeek = 7 
+		var pi =3.1415926
+		var hexValue = 0xFFFF
+
+		document.writeln(daysInWeek,"-",pi,"-",hexValue)
+	</script>
+
+
+	<h2>创建对象</h2>
+	<script type="text/javascript">
+		var vimnium	 = new Object()	
+		vimnium.usageLink = "https://www.zhihu.com/question/22508515"
+		vimnium.name = "vimnium"
+		vimnium.benefit = "浏览器全程键盘流"
+
+		document.writeln("有必要学习一下",`<b style="color: red">${vimnium.name}</b>,`,"好处是",vimnium.benefit,'<br>')
+
+		document.writeln("参考链接: ",`<a href="${vimnium.usageLink}">here</a>`)
+
+	</script>
+
+	<h3>使用对象字面量</h3>
+	<script type="text/javascript">
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+
+		document.writeln("hello ",`<b style="color: pink">${myData.name}</b>`,"<br>")
+		document.writeln("Today is "+myData.weather)
+	</script>
+	
+	<h3>将函数用做方法</h3>
+	<p>对象可以添加方法,也可以添加函数.属于一个对象的函数称为其方法.</p>
+	<p>在方法内部使用对象属性时,可以使用 this 关键字,函数作为方法使用时,所属对象会以关键字 this的形式作为一个参数被传给它.</p>
+
+	<script type="text/javascript">
+		var myData = {
+			name: "Adam",
+			weather: "sunny",
+			printMessages: function(){
+				document.writeln("hello ",`<b style="color: pink">${this.name}</b>`,"<br>")
+				document.writeln("Today is "+this.weather)
+			}
+		}
+
+		myData.printMessages();
+
+	</script>
+
+	<h3>使用对象</h3>
+	<h2>读取和修改对象属性值</h2>
+	<script type="text/javascript">
+		
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+		myData.name = "Joe"
+		myData.weather = "raining"
+
+		document.writeln("hello ",`<b style="color: pink">${myData.name}</b>`,"<br>")
+		// 类似于数组索引
+		document.writeln("Today is "+myData['weather'])
+
+	</script>
+
+	<h3>枚举对象属性</h3>
+
+	<script type="text/javascript">
+		var myData = {
+			name: "Adam",
+			weather: "sunny",
+			printMessages: function(){
+				document.writeln("hello ",`<b style="color: pink">${this.name}</b>`,"<br>")
+				document.writeln("Today is "+this.weather)
+			}
+		}
+
+		for(var prop in myData) {
+			document.writeln("Name: ",prop,"<br>", "Value: ",myData[prop],"<br><br>")
+		}
+	</script>
+
+	<h2>增删属性和方法</h2>
+	<h3>为对象添加新属性</h3>
+	<script type="text/javascript">
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+
+		myData.dayInWeek = "Monday"
+		myData["brithday"] = "2020-01-21"
+		document.writeln(myData['brithday'])
+	</script>
+
+	<h3>为对象添加新方法</h3>
+	<script type="text/javascript">
+		
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+
+		myData.sayHello = function (name) {
+			document.writeln("hello ", name)
+		}
+
+		myData.sayHello(myData.name)
+
+	</script>
+
+	<h3>删除对象的属性</h3>
+	<script type="text/javascript">
+
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+
+		myData.sayHello = function (name) {
+			document.writeln("hello ", name)
+		}
+
+		delete myData.name;
+
+		for(var prop in myData) {
+			document.writeln("Name: ",prop,"<br>", "Value: ",myData[prop],"<br><br>")
+		}
+	</script>
+
+	<h3>判断对象是否具有某个属性</h3>
+	<p>可以使用 in 表达式判断对象是否具有某个属性</p>
+	<script type="text/javascript">
+
+		var myData = {
+			name: "Adam",
+			weather: "sunny"
+		}
+
+		myData.sayHello = function (name) {
+			document.writeln("hello ", name)
+		}
+
+		var hasName = "name" in myData;
+		var hasDate = "date" in myData;
+		var hasThisMethods = "sayHello" in myData;
+
+		document.writeln("HasName: ", hasName,"<br>","HasDate: ", hasDate,"<br>", "HasThisMethods: ", hasThisMethods)
+	</script>
+
+	<h2>使用Javascript 运算符号</h2>
+	<p><a href="https://blog.csdn.net/stupid56862/article/details/90748840">Vim设置标记快速跳转</a></p>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>运算符</td>
+				<td>说明</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>++ --</td>
+				<td>
+					前置或后置自增和自减
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>+ - * / %</td>
+				<td>
+					
+					加、减、乘、除、求余
+				</td>
+			</tr>
+			<tr>
+				<td>< <= > >=</td>
+				<td>
+					
+					小于、小于等于、大于、大于等于
+				</td>
+			</tr>
+			<tr>
+				<td>== !=</td>
+				<td>
+					
+					相等和不相等
+				</td>
+			</tr>
+			<tr>
+				<td>=== !==</td>
+				<td>
+					
+					等同和不等同
+				</td>
+			</tr>
+			<tr>
+				<td>&& ||</td>
+				<td>
+					逻辑与、逻辑或
+				</td>
+			</tr>
+			<tr>
+				<td>=</td>
+				<td>
+					赋值
+				</td>
+			</tr>
+
+			<tr>
+				<td>+</td>
+				<td>
+					字符串连接
+				</td>
+			</tr>
+
+			<tr>
+				<td>?:</td>
+				<td>三元条件语句</td>
+			</tr>
+		</tbody>
+		<tfoot></tfoot>
+	</table>
+
+	<h3>相等运算符</h3>
+	<script type="text/javascript">
+		var firstVal = 5;
+		var secondVal = "5"
+
+		if(firstVal == secondVal) {
+			document.writeln("firstVal 与 secondVal的值 ","一样","<br>")
+		}
+		else{
+			document.writeln("firstVal 与 secondVal的值 ","不一样","<br>")
+		}
+	</script>
+
+
+
+
+	<h3>等同运算符</h3>
+	<script type="text/javascript">
+
+		var firstVal = "5";
+		var secondVal = "5"
+
+		if(firstVal == secondVal) {
+			`
+			二者值相同 --->
+			1.检测类型是否相同
+			`
+			if (firstVal === secondVal) {
+				document.writeln("firstVal 与 secondVal的值和类型 ","都一样","<br>")
+			}
+			else{
+				document.writeln("firstVal 与 secondVal的值: ","一样","<br>")
+			}
+		}
+		else{
+			`
+			二者值不同 --->
+			1.检测类型是否相同
+			`
+			document.writeln("firstVal 与 secondVal的值:","不同")
+		}
+	</script>
+
+	<h2>显式类型转换</h2>
+	<script type="text/javascript">
+		var myData1 = 5 + 5;
+		var myData2 = 5 + "5";
+		document.writeln(" 5+5 的值： ",myData1,"<br>")
+		document.writeln(' 5 + "5" 的值: ',myData2,"<br>")
+
+		document.writeln("这样就成了拼接字符串了，并不能正确的进行计算")
+	</script>
+
+	<h3>将数值转换为字符串</h3>
+	<script type="text/javascript">
+
+    //  Number.toString() 将数值转换为字符串
+
+    var myData1 = (15).toString() + String(5);
+    document.writeln("以10进制的形式将数值转换为字符串: ",myData1,"<br>")
+
+    var myData2 = (15).toString(2) + String(5);
+    document.writeln("以2进制的形式将数值转换为字符串: ",myData2,"<br>")
+
+    var myData3 = (15).toString(8) + String(5);
+    document.writeln("以8进制的形式将数值转换为字符串: ",myData3,"<br>")
+
+    var myData4 = (15).toString(16) + String(5);
+    document.writeln("以16进制的形式将数值转换为字符串: ",myData4,"<br>")
+
+    var myData5 = (15).toFixed(8);
+    document.writeln("以小数点后有 8 位数字的形式表示实数: ",myData5,"<br>")
+
+    var myData6 = (100000).toExponential(2);
+    document.writeln("以指数表示表示法表示数值。尾数的小数点前后分别有1为数字和n位数字。本例n设置为2，小数点后面有2位数字，具体表示为 100000 = ",myData6,"<br>")
+
+    var myData7 = (3.1565926).toPrecision(5);
+    document.writeln(`将数字格式化为指定的长度,本例将<b style="color: red">3.1565926</b>格式化为 5位有效数字: `,`<b style="color: blue">${myData7}</b>`," 注意，已经进行了四舍五入","<br>")
+
+</script>
+
+<h3>将字符串转换为数值</h3>
+<p><a href="https://tool.oschina.net/hexconvert/">在线进制转换</a></p>
+<script type="text/javascript">
+	var firstVal = '15'
+	var secondVal = '5'
+	var thridVal = "1212.12112"
+
+	var result = Number(firstVal) + Number(secondVal)
+	var resultToInt = parseInt(firstVal,8) +  parseInt(secondVal,10)
+	var resultToFloat = parseFloat(firstVal) + parseFloat(secondVal) + parseFloat(thridVal)
+
+	document.writeln("Final result is ",result,"<br>")
+	document.writeln("8进制转换成10进制后求值： ",resultToInt,"<br>")
+	document.writeln("解析字符串，返回浮点数: ",resultToFloat)
+</script>
+
+<h2>使用数组</h2>
+<h3>创建和填充数组</h3>
+<script type="text/javascript">
+	var myArray = new Array()
+	myArray[0] = 100
+	myArray[1] = "Adam"
+	myArray[3] = true
+
+	document.writeln(myArray)
+</script>
+
+<h3>使用数组字面量</h3>
+<script type="text/javascript">
+	var myArray = [100,"Adam",true]
+	document.writeln(myArray)
+</script>
+
+<h3>读取和修改数组内容</h3>
+<script type="text/javascript">
+	
+	var myArray = [100,"Adam",true]
+	document.writeln("索引位置 0上的数值是: ",myArray[0])
+</script>
+
+<h3>枚举数组内容</h3>
+<script type="text/javascript">
+	var myArray = [100,"Adam",true]
+
+	for (var i = 0; i < myArray.length; i++) {
+		document.writeln("索引位置",`<b style="color: red">${i}</b>`,"上的值是： ",myArray[i],"<br>")
+	}
+</script>
+
+<h3>使用内置的数组方法</h3>
+
+<p></p>
+<script type="text/javascript">
+	var myArray = [100,"Adam",true]
+</script>
+
+
+<table border="1">
+	<thead>
+		<tr>
+			<td>方法</td>
+			<td>说明</td>
+			<td>返回</td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td>concat(otherArray)</td>
+			<td>
+				将数组和参数所指数组的内容合并为一个新数组可指定多个数组
+			</td>
+			<td>数组</td>
+		</tr>
+
+		<tr>
+			<td>join(separator)</td>
+			<td>
+				将所有数组元素连接为一个字符串。各元素内容用参数指定的字符分隔
+			</td>
+			<td>字符串</td>
+		</tr>
+		<tr>
+			<td>pop()</td>
+			<td>
+
+				把数组当做栈使用，删除并返回数组的最后一个元素 
+			</td>
+			<td>对象</td>
+		</tr>
+		<tr>
+			<td>push(item)</td>
+			<td>
+
+				把数组当做栈使用，将指定的数据添加到数组中
+			</td>
+			<td>void</td>
+		</tr>
+		<tr>
+			<td>reverse()</td>
+			<td>
+
+				就地反转数组元素的次序
+			</td>
+			<td>数组</td>
+		</tr>
+		<tr>
+			<td>shift()</td>
+			<td>
+				类似pop,但操作的是数组的第一个元素
+			</td>
+			<td>对象</td>
+		</tr>
+		<tr>
+			<td>slice(start,end)</td>
+			<td>
+				返回一个子数组
+			</td>
+			<td>数组</td>
+		</tr>
+		<tr>
+			<td>sort()</td>
+			<td>
+				就地对数组元素排序
+			</td>
+			<td>数组</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>unshift(item)</td>
+			<td>
+				类似push，但新元素被插到数组的开头位置
+			</td>
+			<td>void</td>
+		</tr>
+	</tfoot>		
+</table>
+
+<h3>concat 方法 --- 连接数组</h3>
+<script type="text/javascript">
+	var a = [1,2,3]
+	var b = [4,5,6]
+	var c = [7,8,9]
+
+	var e = a.concat(b)
+	var f = e.concat(c)
+
+	document.writeln(f)
+</script>
+
+<h3>join 方法 --- 数组使用指定 字符串 分割数组元素</h3>
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.write(arr.join("."),"<br>")
+
+	var ass = [1,2,3]
+	document.writeln(ass.join("- :) -"))
+
+</script>
+
+<h3>pop 方法</h3>
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.writeln("当前数组： ",arr,"<br>")
+
+	document.writeln("本例将会删除数组中的元素： ",arr.pop(),"<br>")
+
+	document.writeln("经过删减后的数组： ",arr,"<br>")
+</script>
+
+<h3>push方法</h3>
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.writeln("当前数组： ",arr,"<br>")
+
+	document.writeln("PUSH方法返回的值是数组的新长度： ",arr.push("revolt"),"<br>")
+
+	document.writeln("用过PUSH()方法之后的数组：",arr,"<br>")
+</script>
+
+<h3>reverse 方法</h3>
+
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.writeln("当前数组： ",arr,"<br>")
+
+	document.writeln("使用过 reverse()方法之后的数组：",arr.reverse(),"<br>")
+</script>
+
+<h3>shift 方法</h3>
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.writeln("当前数组： ",arr,"<br>")
+
+	document.writeln("使用过 shift()方法之后的数组,已经删除了数组的第一个元素: ",arr.shift(),"<br>")
+
+	document.writeln("现在的数组： ",arr,"<br>")
+</script>
+
+<h3>slice 方法 --- 返回一个子数组</h3>
+<script type="text/javascript">
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+
+	document.writeln("之前的数组： ",arr,"<br>")
+
+	document.writeln("使用过 slice()方法之后的数组: ",arr.slice(0,1),"<br>")
+
+	document.writeln("现在的数组： ",arr,"<br>")
+</script>
+
+<h3>使用 sort() --- TODO </h3>
+<p>
+	<b>如果你要比较字母，你得把数组中的所有元素都转换成字符串。</b>
+
+	<br>
+
+	<span>
+		字母比较的依据是 按照字符编码的顺序进行排序.
+	</span>
+
+	<br>
+	<br>
+
+	<b>
+		如果你要比较数字，需要提供比较函数，
+	</b>
+
+	<ul>
+		<li>
+			若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+		</li>
+		<li>
+			若 a 等于 b，则返回 0。
+		</li>
+		<li>
+			若 a 大于 b，则返回一个大于 0 的值。
+		</li>
+	</ul>
+</p>
+<script type="text/javascript">
+	var arr = new Array(6)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+	arr[3] = "James"
+	arr[4] = "Adrew"
+	arr[5] = "Martin"
+
+	document.writeln("排序之前的数组：",arr,"<br>")
+	document.write("排序之后的数组：",arr.sort(),"<br>")
+</script>
+
+<script type="text/javascript">
+	var arr = new Array(6)
+	arr[0] = "1"
+	arr[1] = "10"
+	arr[2] = "12"
+	arr[3] = "8"
+	arr[4] = "122"
+	arr[5] = "0.1"
+
+	document.writeln("排序之前的数组：",arr,"<br>")
+
+	function sortNumber(a,b)
+	{
+		return a - b
+	}
+	document.write("排序之后的数组：",arr.sort(sortNumber),"<br>")
+</script>
+
+<h3>unshift 方法</h3>
+<script type="text/javascript">
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+	document.writeln("之前的数组：",fruits,"<br>")
+	fruits.unshift("Lemon","Pineapple"); 
+
+	document.writeln("添加到数组前头后组成的数组：",fruits,"<br>")
+</script>
+
+<h2>处理异常</h2>
+<script type="text/javascript">
+
+	try {
+		var lsArray
+		for(var i = 0; i < lsArray.length;i++) {
+			document.writeln("Index "+i+": "+lsArray[i],"<br>")
+		}
+	}
+	catch (e){
+		if (e instanceof TypeError) {
+			document.writeln("类型错误",e,"<br>")
+        } 
+        else if (e instanceof RangeError) {
+			document.writeln(e,"<br>")
+        } 
+        else if (e instanceof EvalError) {
+			document.writeln(e,"<br>")
+        } 
+        else {
+        	// 一个常见的用例是只捕获（并保持沉默）一小部分预期的错误，然后在其他情况下重新抛出该错误
+        	throw e;
+
+        	// 忽略抛出异常
+        	// return false;
+        }
+    }
+    finally{
+    	// 无论是否触发异常，这里的代码总是被执行
+    	document.writeln("这里的语句总是执行")
+    }
+</script>
+
+<h2>比较 undefined 和 null 值</h2>
+<script type="text/javascript">
+	var myData = {
+		name: "Adam",
+		weather: "sunny"
+	}
+	document.writeln("读取对象没有的属性值: ",myData.doesntexist)
+</script>
+</body>
+
+</html>

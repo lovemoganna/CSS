@@ -1,0 +1,23 @@
+* 1 Emacs - 消瘦编程和定制
+
+** 1.1 概述
+
+scheme: 2020-12-29 22:50
+    
+Emacs 不需要任何演示文稿。
+
+Emacs是一个"Lisp机器"软件，并提供一个可编程的文本编辑器，电子邮件阅读器，文本网络浏览器，图像viwer，计算器，外壳，游戏，复活节彩蛋以及更多。
+
+Emacs 是用 Elisp 编程的，这是一种 Emacs 自己的 lisp 方言，它基于 MacLisp，这是最古老的 lisp方言之一，比麻省理工学院创建的常见 lisp 和 Scheme 更古老。埃马奇斯是1976年由传奇人物理查德·斯塔尔曼写的。
+
+尽管与普通 Lisp 有许多不兼容之处，但它有许多类似于它构造和 n 本关于普通 Lisp 的优秀书籍，这对于理解 Elisp 和方案是 Lisp - 由
+Paul Graham 的也很有用。
+
+存储库链接
+
+Github 存储库 短链接： http://tinyurl.com/emacsinabox - 呼吸道： 盒子里的 Emacs HTML 版本 -
+github.io
+
+注意：
+
+这项工作正在进行中。 您可以在 Emacs 中查看此文档，因为它已转换为组织模式，请参阅文件README.org。它也可以导出到 html、 pdf、github 标记等。

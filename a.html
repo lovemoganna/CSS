@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HTML文档的外层结构 -->
+<head>
+	<!-- 元数据 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>一个功能充足的HTML文档</title>
+	<style type="text/css">
+		h2{
+			color: red;
+		}
+
+		.class1{
+			background-color: grey;
+			color: white;
+			padding: 5px;
+			margin: 2px;
+		}
+
+		#google{
+			background: grey;
+			color: white;
+			padding: 5px;
+			border: thin solid black;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 文档内容 -->
+
+	<h2>使用元素</h2>
+
+	<div class="item1" id="item1">
+		<span>使用空元素</span>
+		<div>I like <code></code> apples and oranges.</div>
+	</div>
+
+	<div class="item2">
+		<span>使用空元素结构表示虚元素</span>
+		<div>I Like apples and oranges</div>
+		<hr />
+		<div>I Like eat foods</div>
+	</div>
+
+	<h2>使用元素属性</h2>	
+
+	<div class="item3">
+		<span>一个元素应用多个属性</span>
+		<div>I like use<a href="www.google.com" class="link" id="search_link">Google</a>Search question get results.</div>
+	</div>
+
+	<div class="item4">
+		<span>使用布尔属性</span>
+		<div>Enter your name: <input type="text"></div>
+		<div>Enter your name: <input type="text" disabled=""></div>
+		<div>Enter your name: <input type="text" disabled="disabled"></div>
+	</div>
+
+	<div class="item5">
+		<span>使用自定义属性</span>
+		<div>Enter your name: <input disabled="ture" data-creator="Arch" data-purpose="Test"></div>
+	</div>
+
+	<h2>创建HTML文档</h2>
+	<p>处理HTML文档的软件称为 USER AGENT.</p>
+
+	<div class="item6">
+		父元素
+		<div>子元素是关系最近的后代元素</div>
+		<div>子元素的兄弟元素</div>
+		<div>
+			<p>后代元素</p>
+		</div>
+	</div>
+
+	<h2>使用HTML实体</h2>
+	<div class="item7">
+		<span>&#60;</span>
+		<span>&#62;</span>
+		<span>&#38;</span>
+		<span>&#8364;</span>
+		<span>&#163;</span>
+		<span>&#167;</span>
+		<span>&#169;</span>
+		<span>&#174;</span>
+		<span>&#38;</span>
+		<span>ATM&#8482;</span>
+	</div>
+
+	<h2>HTML5全局属性 - global attributes</h2>
+	<div class="item7">
+		<p>accessky属性 --- 可以用来设定页面上元素的快捷键</p>
+		<p> Correspond key is Alt key</p>
+		<form action="">
+			Name: <input type="text" name="name" accesskey="n"/>
+			<p/>
+			Password: <input type="text" name="password" accesskey="p"/>
+			<p/>
+			<input type="submit" value="Log In" accesskey="s"/>
+		</form>
+	</div>
+	<div class="item8">
+		<p>使用 class 属性 - 将元素归类</p>
+		<a href="baidu.com" class="class1 class2">百度</a>
+		<a href="google.com" class="class2 otherclass">谷歌</a>
+	</div>
+	<div class="item9">
+		<p>定义依靠类起作用的样式 --- 具体参见 .class1 设置的样式</p>
+	</div>
+
+	<div class="item10">
+		<p>在脚本中使用class属性</p>
+	</div>
+	<!-- Emmet Syntax -->
+	<!-- ul>li.item$*5>a{Item $} -->
+
+	<div class="item11">
+		<p>contenteditable属性</p>
+		<p contenteditable="true">瞅着不爽，可以在此修改</p>
+	</div>
+
+	<div class="item12">
+		<p>contextmenu 属性 --- 你需要在 Firefox 浏览器上测试</p>	
+		<div contextmenu="mymenu">
+			<menu type="context" id="mymenu">
+				<menuitem label="Refresh"></menuitem>
+				<menuitem label="Twitter"></menuitem>
+			</menu>
+		</div>
+	</div>
+
+	<div class="item13">
+		<p>dir 属性 --- 用来规定元素中文字的方向</p>
+		<p dir="rtl">This is right-to-left</p>
+		<p dir="rtr">This is left-to-right</p>
+	</div>
+
+	<div class="item14">
+		<p>draggable 属性 --- 用于是否支持元素拖放</p>
+	</div>
+
+	<div class="item15">
+		<p>dropzone 属性 --- 支持拖放</p>
+	</div>
+
+	<div class="item16">
+		<p>使用 hidden 属性</p>
+		<button onclick="toggleHidden()">Toggle</button>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>City</th>
+			</tr>
+			<tr>
+				<td>lili</td>
+				<td>HeBei</td>
+			</tr>
+			<tr id="toggle" hidden="">
+				<td>Jojo</td>
+				<td>BeiJing</td>
+			</tr>
+			<tr>
+				<td>Zizi</td>
+				<td>ShangHai</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="item17" id="item17">
+		<p>使用 ID 属性 --- 给元素分配一个唯一的标识符</p>
+		<p>使用 ID 属性 --- 导航到文档中的特殊位置</p>
+
+		<div>
+			<a href="baidu.com">Baidu Web Site</a>
+			<a href="google.com" id="google">Google Web Site</a>
+		</div>
+	</div>
+
+	<div class="item18">
+		<p>lang 属性 --- 用于说明元素内容使用的语言</p>
+		<p lang="en">Hello, how are you?</p>
+		<p lang="zh-cmn-Hans">简体中文 --- 最近还好吗？ </p>
+		<p lang="zh-cmn-Hant">繁體中文  --- 最近還好嗎？</p>
+	</div>
+
+	<div class="item19">
+		<p>spellcheck 属性 --- 设置为 true，启动拼写检查</p>
+		<textarea name="" id="" cols="30" rows="10" spellcheck="true">
+			This is some mispelled text	
+		</textarea>
+	</div>
+
+	<div class="item20">
+		<a href="apress.com" style="background: grey;color: white;padding: 10px">Visit the Apress Site.</a>	
+	</div>
+
+	<div class="item21">
+		<p>tabindex 属性 --- HTML 页面上的键盘焦点可通过Tab键在各元素之间切换.</p>
+		<p>tabindex 设置为 -1 的元素不会在用户按下 Tab 键后被选中.</p>
+		<form action="">
+			<label for="">Name:<input type="text" tabindex="1"></label>
+		</p>
+		<label for="">City:<input type="text" tabindex="-1"></label>
+		</p>
+		<label for="">Country:<input type="text" tabindex="2"></label>
+		</p>
+		<input type="submit" tabindex="3"/>
+	</form>
+
+	</div>
+
+	<div class="item22">
+		<p>title 属性提供了元素的额外信息，通常悬浮状态会进行显示.</p>
+		<a href="apress.com" title="Apress Publishing">Visit the Apress site</a>
+	</div>
+
+	<script type="text/javascript">
+
+		var elems = document.getElementsByClassName("otherclass");
+
+		for (var i = 0; i < elems.length; i++) {
+
+			var x =	elems[i]
+			x.style.border = 'thin solid pink'
+			x.style.backgroundColor = 'yellow'
+			x.style.color = 'red'
+		}
+	</script>
+
+
+	<script type="text/javascript">
+
+		var toggleHidden = function (){
+
+			var elem = document.getElementById("toggle")
+
+			if (elem.hasAttribute("hidden")){
+				elem.removeAttribute("hidden")
+			}
+			else {
+				elem.setAttribute("hidden", "hidden")
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>流程图</title>
+	<link rel="stylesheet" href="../css/font.css">
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+	<div class="mermaid">
+	 graph TD
+     	A[HTTP服务器] -->|提供网页| B[路由器]
+      	B -->|处理URL的请求| C[请求处理程序]
+      	B -->|处理传入的POST数据| D[请求数据处理]
+      	C -->|使用视图逻辑| E[将内容发送到用户的浏览器]
+      	B -->|用户上传图像| F[上传处理]
+	</div>
+
+	<p>NodeJS如何创建一个HTTP服务器?</p>
+	<div class="mermaid">
+		graph TD
+			A[TODO: HTTP服务器] -->|调用node http模块| B[http对象]
+			B -->|调用createServer方法: 设置响应头参数| C[返回Server对象]
+			C -->|设置监听参数hostname和port| D[启动并监听服务器]
+	</div>
+</body>
+</html>

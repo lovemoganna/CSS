@@ -1,0 +1,14 @@
+.tb2{
+	font-size: 16px;
+}
+
+.item18 {
+	width: 800px;
+}
+.item18 p.p1{
+	background: grey;
+	color: 	white;
+	/* 20*1/72*= 0.2666666 in*/
+	font-size: 20pt;
+	width: calc(80% - 20px);
+}

@@ -1,0 +1,228 @@
+* BASH BASIC
+
+** execute Authority
+** basic script
+        
+#+NAME: basci-script
+#+BEGIN_SRC shell
+#!/bin/sh
+# This is a comment!
+echo "Hello      World"       # This is a comment, too!
+echo "Hello World"
+echo "Hello * World"
+echo Hello * World
+echo Hello      World
+echo "Hello" World
+echo Hello "     " World
+echo "Hello "*" World"
+echo `hello` world
+echo 'hello' world
+#+END_SRC
+
+#+RESULTS:
+Hello      World
+Hello World
+
+Hello * World
+
+Hello main.bash World
+
+Hello World
+
+Hello World
+
+Hello       World
+
+Hello * World
+
+main.bash: line 11: hello: command not found
+world
+
+hello world
+
+
+
+* BASH for loop
+	
+** Reading static values
+
+#+NAME: simple_for_loop
+#+BEGIN_SRC shell
+for color in Blue Green Pink White Red
+do echo "Color = $color"
+done
+#+END_SRC
+
+#+RESULTS:
+Color = Blue
+Color = Green
+Color = Pink
+Color = White
+Color = Red
+
+** Reading Array Variable
+
+#+NAME: Reading_Array_Variable
+#+BEGIN_SRC shell
+ColorList=("Blue Green Pink White Red")
+for color in $ColorList
+do
+  echo "My favorite color is $color" 
+done 
+
+for color in $ColorList
+do
+  if [[ $color=='Pink' ]]
+    then echo "我最喜欢的颜色：$color"
+  fi 
+done
+#+END_SRC
+
+#+RESULTS:	
+My favorite color is Blue                                                                               
+My favorite color is Green                                                                              
+My favorite color is Pink                                                                               
+My favorite color is White                                                                              
+My favorite color is Red                                                                                
+我最喜欢的颜色：Blue                                                                                    
+我最喜欢的颜色：Green                                                                                   
+我最喜欢的颜色：Pink                                                                                    
+我最喜欢的颜色：White                                                                                   
+我最喜欢的颜色：Red 
+
+** Reading Command-line arguments
+
+#+NAME: reading_command_line_arguments
+#+BEGIN_SRC shell
+for myval in $*
+do echo "Argument: $myval"
+done
+#+END_SRC
+
+run ~bash loop3.sh red blue yellow~ see output results.
+
+** 使用三个表达式求奇数和偶数
+#+NAME: for_loop_number
+#+BEGIN_SRC shell
+for (( n=1; n<=5; n++ ))
+do 
+	if (( $n%2==0 ))
+	then echo "$n is even"
+	else echo "$n is  odd"
+	fi
+done
+#+END_SRC
+
+** reading array content 
+
+#+NAME: rading array content
+#+BEGIN_SRC shell
+array=("first item" "second item" "third" "item")
+echo "原始数组中的 item 数量为: ${#array[*]}"
+echo "原始数组中的所有 index 为：${!array[*]}"
+for ix in ${!array[*]}
+do
+    printf "索引为%s位置的值为%s\n" "$ix" "${array[$ix]}"
+done
+echo;
+arr=(${array[*]})
+echo $arr
+echo "未被引用的扩展的数组的 item 数量为: ${#arr[*]}"
+for ix in ${!arr[*]}
+do
+    printf "索引为%s位置的值为%s\n" "$ix" "${arr[$ix]}"
+done
+echo
+#+END_SRC
+
+#+RESULTS:
+原始数组中的 item 数量为: 4
+原始数组中的所有 index 为：0 1 2 3
+索引为0位置的值为first item
+索引为1位置的值为second item
+索引为2位置的值为third
+索引为3位置的值为item
+
+first
+未被引用的扩展的数组的 item 数量为: 6
+索引为0位置的值为first
+索引为1位置的值为item
+索引为2位置的值为second
+索引为3位置的值为item
+索引为4位置的值为third
+索引为5位置的值为item
+
+
+* BASH array
+
+** 基本数组的应用
+
+#+NAME: basic_rray
+#+BEGIN_SRC shell
+arr=(Hello World)
+
+arr[0]=Hello
+arr[1]=World
+
+echo ${arr[0]} ${arr[1]}
+
+arr=(Hello World)
+ 
+echo "数组中所有的item为： ${arr[*]}"         # All of the items in the array
+echo "数组中的所有索引为： ${!arr[*]}"       # All of the indexes in the array
+echo "数组中的 item 数量为：${#arr[*]}"        # Number of items in the array
+echo "首个 item的长度为: ${#arr[0]}"        # Length of item zero
+#+END_SRC
+
+#+BEGIN_SRC text
+Hello World
+0 1
+2
+5
+#+END_SRC
+
+
+** 数组的综合运用
+
+#+NAME: array_more
+#+BEGIN_SRC shell
+array=(one two three four [5]=five)
+
+echo "数组长度为: ${#array[*]}"
+
+
+echo "数组的items为:"
+for item in ${array[*]}
+do 
+    printf "%s\n" $item
+done
+
+echo "数组的indexs为:"
+for index in ${!array[*]}
+do 
+    printf "%d\n" $index
+done
+
+echo "Array items and indexes:"
+for index in ${!array[*]}
+do
+    printf "%4d: %s\n" $index ${array[$index]}
+done
+#+END_SRC
+
+#+NAME: more_complex_array
+#+BEGIN_SRC shell
+array=("first item" "second item" "third" "item")
+echo "原始数组中的 item 数量为: ${#array[*]}"
+echo "原始数组中的所有 index 为：${!array[*]}"
+for ix in ${!array[*]}
+do
+    printf "索引为%s位置的值为%s\n" "$ix" "${array[$ix]}"
+done
+echo
+#+END_SRC
+
+#+NAME: array
+#+BEGIN_SRC shell
+
+#+END_SRC

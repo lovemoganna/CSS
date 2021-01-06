@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>文档分节</title>
+	<style type="text/css" media="screen">
+		@import url("https://fonts.googleapis.com/css?family=Cairo|Roboto|Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900");
+
+		:root {
+			--font-family: "Roboto", "Noto Sans SC", "Noto Serif SC", sans-serif;
+		}
+
+		html {
+			font-family: var(--font-family);
+		}
+
+		h1,h2,h3,article > footer {
+			background: grey;
+			color: white;
+		}
+		hgroup > h1 {
+			margin-bottom: 0px;
+			margin-top: 0px;
+		}
+		hgroup > h2 {
+			background: grey;color: white;font-size:1em;margin-top:0px;margin-bottom: 2px;
+		}
+		/*背景+底色设置*/
+		div[class^='item'] > header *, div[class^='item'] > footer > * {
+			background: transparent;color: black;
+		}
+
+		/*section层级缩进调整*/
+		div[class^='item'] > section,div[class^='item'] > section > section,
+		div[class^='item'] > section > section > section {margin-left: 10px;}
+
+		/*头尾圈起来*/
+		div[class^='item'] > header, div[class^='item'] > footer {
+			border: medium solid black;
+			padding-left: 5px;
+			margin: 10px 0 10px 0;
+		}
+
+		div[class^='item'] > nav {
+			text-align: center;padding: 2px;border: dashed thin black;
+		}
+
+		div[class^='item'] > nav > a {
+			padding: 2px;
+			color: black;
+		}
+		div[class^='item'] > footer {
+			text-align: center;
+		}
+
+		article {
+			border: thin black solid;
+			padding: 10px;
+			margin-bottom: 5px;
+		}
+
+		article > footer {
+			padding: 5px;
+			margin: 5px;
+			text-align: center;
+		}
+
+		article > footer > nav > a {
+			color: pink;
+		}
+
+		div[class^='item'] > article > section,
+		div[class^='item'] > article > section > section {
+			margin-left: 10px;
+		}
+		div[class^='item'] > nav {
+			text-align: center;padding: 2px;border: dashed thin black;
+		}
+
+		div[class^='item'] > nav > a {
+			padding: 2px;color: black;
+		}
+
+		aside {
+			width: 40%;
+			background: white;
+			float: right;
+			border: thick solid black;
+			margin-left: 5px;
+		}
+
+		aside > section {
+			padding: 5px;
+		}
+
+		aside > h1 {
+			background: white;
+			color: black;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>添加基本的标题</h2>
+	<p>同级标题通常用来将内容分作几个部分,每个部分一个主题</p>
+	<p>各级标题通常用来表示 统一主题的各个方面.</p>
+	<p>这些元素的好处就是它们构成了文档的大纲,用户只要随便浏览一下文档的各级标题即可初步了解其大意和结构.</p>
+	<p>他们通过将标题体系还能迅速导航到感兴趣的内容.</p>
+	<p>爷之所以为爷,是因为他能自主找到自己想要的东西.</p>
+	<div class="item1">
+		<h1>#回敬2020，遇见2021#</h1>
+		【镜观陇原丨“脱贫攻坚·圆梦小康”甘肃摄影展在兰州开幕】12月27日上午，由甘肃省委宣传部、省扶贫办和省文联主办，省摄协承办的“脱贫攻坚·圆梦小康”甘肃摄影展在兰州雁儿湾当代美术馆举办。
+		<h2>《戈壁滩上的石油城》</h2>
+		此次展览的作品，是我省广大摄影人以“深入生活、扎根人民”的艺术理念，记录新时代，讴歌新时代的具体体现，也是他们借助摄影的艺术表达，展现陇原大地干群携手、攻克贫困堡垒的生动画卷。
+		<h3>《发展高原夏菜 致力脱贫致富》组照之一</h3>
+		12月27日上午，由甘肃省委宣传部、省扶贫办和省文联主办，省摄协承办的“脱贫攻坚·圆梦小康”甘肃摄影展在兰州雁儿湾当代美术馆举办。省人大原副主任苏志希、李德奎，省文联党组书记、主席王登渤，省委宣传部二级巡视员封奎海、全国贫困地区干部培训中心兰州分院院长迭目江腾、省文联党组成员、副主席王正茂等领导出席，省摄协在兰主席团成员、理事，部分入展作者及新闻媒体记者200余人参加了开幕式。开幕式由省文联副主席潘义奎主持。
+
+		<h1>【#西安#西咸新区扶贫系列微电影《元旦》上线】</h1>
+		<p>
+			12月30日，西咸新区泾河新城扶贫系列微电影《元旦》首映，并在全网同步上线播出。西咸新区扶贫办、泾河新城党委组织部、党委宣传部、扶贫办负责人及脱贫励志户、爱心企业代表等参加首映仪式
+		</p>
+		<h2>西咸新区扶贫系列微电影《元旦》上线</h2>
+		【#西安#西咸新区扶贫系列微电影《元旦》上线】12月30日，西咸新区泾河新城扶贫系列微电影《元旦》首映，并在全网同步上线播出。西咸新区扶贫办、泾河新城党委组织部、党委宣传部、扶贫办负责人及脱贫励志户、爱心企业代表等参加首映仪式。 ​
+		<h3>西安网络广播电视台</h3>
+		新年来临，古城#西安#大街小巷装扮一新，华灯初上，处处流光溢彩，一起去感受一下红红火火的节日气氛吧～最冷大城市排行#
+		<ol>
+			<li>拜年</li>
+			<li>喝酒</li>
+			<li>发红包</li>
+		</ol>
+	</div>
+
+	<p>一般只使用三级标题,大多数内容最多只需要用到两级或三级标题.</p>
+
+	<h2>隐藏子标题</h2>
+
+	<h3>用h1和h2元素生成带子标题的标题</h3>
+	<p>hgroup元素可以用来将几个标题元素作为一个整体处理,以免搅乱HTML文档的大纲.</p>
+	<p>假设文档中有一个h1标题,还有一个h2元素,但无法区分是表示子标题的h2元素,还是表示下一级标题的h2元素</p>
+	<p>hgroup主要用来解决子标题的问题,此时可以采用它.</p>
+	<div class="item2">
+		<hgroup>
+			<h1>Fruits I Like</h1>
+			<h2>How I Learned to Love Citrus - 这是一个子标题</h2>
+		</hgroup>
+		T like apples and oranges.
+		<h2>Additional fruits</h2>
+		I also like bananas,mangoes,cherries,apricots,plums,peaches and grapes,
+		<h3>More information</h3>
+		You can see other fruits I like <a href="fruitlist.html">here</a>.
+	</div>
+
+	<h2>生成节</h2>
+	<p>section元素是HTML5中新增的.表示是文档中的一节.</p>
+	<p>使用标题元素的时候实际上也生成了隐含的节.</p>
+	<p>使用section元素则可以明确地生成节并且将其与标题分开.</p>
+	<p>至于啥时候使用section元素,没有一个明确的规定.</p>
+	<p>section元素用来包含的是那种应该列入文档大纲或目录中的内容.</p>
+	<p>section元素通常包含一个或多个段落及一个标题,不过标题并不是必须的.</p>
+	<div class="item3">
+		<section>
+			<hgroup>
+				<h1>Fruits I Like</h1>
+				<h2>How I Learned to Love Citrus - 这是一个子标题</h2>
+			</hgroup>
+			T like apples and oranges.
+			<section>
+				<h1>Additional fruits</h1>
+				I also like bananas,mangoes,cherries,apricots,plums,
+				peaches and grapes.
+				<section>
+					<h1>More information</h1>
+					You can see other fruits I like <a href="fruitlist.html">here</a>.
+				</section>
+			</section>
+		</section>	
+
+		<h1>Activities I like</h1>
+		<p>东西不懂,不懂东西</p>
+		<h2>Kinds of Triathlon</h2>
+		这里有很多种运动 - 跳舞 滑雪 跑步
+		<h3>The kind of triathlon I am aming for</h3>
+		I am aiming for Olympic,which consists of the following:
+		<ol>
+			<li>1.5km swim</li>
+			<li>40km cycle</li>
+			<li>10km run</li>
+		</ol>
+	</div>
+	<p>此类定义了三个section元素,它们一个嵌一个.每个section的标题元素都是h1.</p>
+	<p>使用了section元素后,浏览器会负责理顺标题元素的层次关系,让作者从确定和管理各个标题元素的正确次序的差事中解脱出来.</p>
+	<p>chrome,Firefox可以推断出隐含的层次关系,并确定每个h1元素的相对级别.你可以通过字号的大小判断出来.</p>
+	<p>你可以看到section 的 h1元素和正常的 h1元素比较要小.这是因为浏览器对位于section,article,aside和nav元素中的h1至h6的元素应用样式有所不同.</p>
+	<p>并不是所有的浏览器都能为内嵌在section元素中的同种标题元素建立正确的层次结构.</p>
+
+	<h2>添加首部和尾部</h2>
+	<p>header元素表示一节的首部.里面可以包含各种适合出现在首部的东西,包括刊头或者徽标.</p>
+	<p>在内嵌的元素方面,header元素通常包含一个标题元素或一个hgroup元素,还可以包含该节的导航元素.</p>
+	<p>footer元素是header元素的配套元素,表示一节的尾部.footer通常包含着该节的总结信息,还可以包含作者介绍,版权信息,到相关内容的链接,徽标及免责声明.</p>
+	<p>示例内容如下</p>
+	<div class="item4">
+
+		<header>
+			<hgroup>
+				<h1>Thing I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+		</header>
+
+		<!-- 三级section的表示 -->
+		<section>
+			<header>
+				<hgroup>
+					<h1>I like thing</h1>
+					<h2>eat food</h2>
+				</hgroup>
+			</header>
+			I like apples and oranges.
+			<section>
+				<h1>Additional fruits</h1>
+				I also like bananas,mangoes,cherries,apricots,plums,
+				peaches and grapes.
+				<section>
+					<h1>More information</h1>
+					You can see other fruits I like <a href="fruitlist.html">here</a>.
+				</section>
+			</section>
+		</section>
+
+		<section>
+			<header>
+				<h1>Activities I like</h1>
+			</header>
+			<section>
+				<p>I like to swim,cycle and run. I am in training for my first 
+				triathlon,but it is hard work.</p>
+				<h1>Kinds of Triathlon</h1>
+				There are different kinds of of triathlon - sprint,Olympic and so on.
+				<section>
+					<h1>The kind of triathlon I am aiming for</h1>
+					I am aiming for Olympic,which consists of the following:
+					<ol>
+						<li>1.5km swim</li>
+						<li>40km cycle</li>
+						<li>10km run</li>
+					</ol>
+				</section>
+			</section>
+		</section>
+
+		<footer id="mainFooter">
+			&#169;2011,Adam Freeman.<a href="http://asdasd.com">Visit Fuck.</a>
+		</footer>
+	</div>
+
+	<p>本例定义了3个header元素</p>
+	<ol>
+		<li>作为div元素的header元素被视为这个块的首部.</li>
+		<li>作为某节组成部分的header元素只是该节的首部.</li>
+		<li>添加了一些样式以便显示出层次关系.</li>
+	</ol>
+
+	<h2>添加导航区域</h2>
+	<p>nav元素表示文档中的一个区域,它包含着到其他页面或同一页面的其他部分的链接.</p>
+	<p>并非所有的超链接都要放到nav元素中.该元素的目的是规划处文档的主要导航区域.</p>
+	<div class="item5">
+
+		<header>
+			<hgroup>
+				<h1>Thing I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+
+			<nav>
+				<h1>Contents</h1>
+				<ul>
+					<li><a href="#fruitsilike">Fruits I like</a></li>
+
+					<ul>
+						<li><a href="#morefruit">Additional Fruits</a></li>
+					</ul>
+					<li><a href="#activitiesilike">Activities I like</a></li>
+					<ul>
+						<li><a href="#tritypes">Kinds of Triathlon</a></li>
+						<li><a href="#mytri">The kind of triathlon I am aming for</a></li>
+					</ul>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- 三层section -->
+		<section>
+			<header>
+				<hgroup>
+					<h1 id="fruitsilike">Fruits I like</h1>
+					<h2>How I learned to love cat</h2>
+				</hgroup>
+			</header>
+
+			I like eat apples and oranges.
+
+			<section>
+				<h1 id="morefruit">Additional fruits</h1>	
+				I also like bananas,mangoes,cherries,apricots,plums,
+				peaches and grapes.
+				<section>
+					<h1>More information</h1>	
+					You can see other fruits I like <a href="fruitlist.html">here</a>.
+				</section>
+			</section>
+		</section>
+
+		<section>
+			<header>
+				<h1 id="activitiesilike">Activities I like</h1>
+			</header>
+
+			<section>
+				<p>能够成为观众们难以忘记的作品，这也是非常难的。在竞争的演艺圈里，能够被观众们视为经典作品，也是少数一部分，大多数作品或许很难得到非常突出的成绩。一部被观众们认可的作品，无论是说到此部作品的剧情，或者是出演此部作品中的演员，观众们非常满意。在这个演艺圈里，有这样一个趋势，也就是说关于仙侠剧类的题材，这类作品红火程度是非常好的，很多观众依旧清晰记得《琉璃》。</p>	
+				<h1 id="tritypes">Kinds of Triathlon</h1>
+				There are different kinds of triathlon - sprint,Olympic and so on.
+
+				<section>
+					<h1 id="mytri">The kind of triathlon I am aiming for</h1>
+					I am aming for Olympic,which consists of the following:
+					<ol>
+						<li>1.5km swim</li>
+						<li>40km cycle</li>
+						<li>10kmrun</li>
+					</ol>
+				</section>
+			</section>
+		</section>
+
+		<nav>
+			More Information:
+			<a href="www.baidu.com">Learn More About Fruit </a>
+			<a href="www.google.com">Learn More About Triathlons</a>
+		</nav>
+
+		<footer>
+			&#169;2011,Adam GG. <a href="apress.com">Visit More</a>.
+		</footer>
+	</div>
+
+	<p>此例在文档中使用了两个nav元素,第一个为用户提供了在文档中导航的途径.在这个元素内部用ul,li,和a元素生成了一个相对链接的层次结构.</p>
+	<p>这个nav元素放在文档的主header元素中,并不是强制性的.只是美观而已.</p>
+	<p>第二个nav元素放在文档末尾,为用户提供了一些链接,以便其获取更多信息.</p>
+
+	<h2>使用article</h2>
+	<p>article元素代表HTML文档中一段独立成篇的内容,从理论上讲,可以独立页面其余内容发布或使用(例如通过RSS).</p>
+	<p>并非说作者必须单独发布它,而是说判断是否使用该元素时要以独立性为依据.</p>
+	<p>一篇新文章和博文条目都是这方面的典型例子.</p>
+	<p>示例内容如下</p>
+	<div class="item6">
+		
+		<header>
+			<hgroup>
+				<h1>Things I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+			<nav>
+				<h1>Contents</h1>
+				<ul>
+					<li><a href="#fruitsilike2">Fruits I Like</a></li>
+					<li><a href="#activitiesilike2">Activities I Like</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			<header>
+				<hgroup>
+					<h1 id="fruitsilike2">Additional fruits</h1>
+					<h2>How I learned to love Citrus</h2>
+				</hgroup>
+			</header>
+
+			I like apples and oranges.
+
+			<section>
+				<h1 id="morefruit">Additional fruits</h1>
+				I also like bananas,mangoes,cherries,apricots,plums,
+				peaches and grapes.
+				<section>
+					<h1>more information</h1>
+					You can see other fruits I like <a href="fruitlist.html">here</a>
+				</section>
+			</section>
+
+			<footer>
+				<nav>
+					more information:
+					<a href="fruit.org">Learn More About Fruit</a>
+				</nav>
+			</footer>
+		</article>
+
+		<article>
+			<header>
+				<hgroup>
+					<h1 id="activitiesilike2">Activities I like</h1>
+					<h2>It hurts,but I keep doing it</h2>
+				</hgroup>
+			</header>
+
+			<section>
+				<p>I like to swim,cycle and run. I am in training for my first
+				triathlon, but it is hard work.</p>	
+				<h1 id="tritypes">Kinds of Triathlon</h1>
+				There are different kinds of triathlon - sprint,Olympic and so on.
+
+				<section>
+					<h1 id="mytri">The kind of triathlon I am aming for</h1>
+					I am aiming for Olympic,which consists of the following
+					<ol>
+						<li>1.5km swim</li>
+						<li>40km cycle</li>
+						<li>10km run</li>
+					</ol>
+				</section>
+			</section>
+
+			<footer>
+				<nav>
+					More information:
+					<a href="triathlon.org">Learn More About Triathlons</a>
+				</nav>
+			</footer>
+		</article>
+
+		<footer id="mainFooter">
+			&#169;2011,Adam Freeman.<a href="http://asdasd.com">Visit Fuck.</a>
+		</footer>
+	</div>
+
+	<p>此例调整了文档的结构以向博客通常采用的格局看起</p>
+	<p>文档的主题分作三大部分,第一部分是一个header元素,它汇总了各条博文信息,为文档其他部分提供了一个锚点.</p>
+	<p>第二部分是末尾的footer元素,与header相照应,提供了适合于其余内容的基本信息.</p>
+	<p>第三部分,article元素.每个article描述了作者喜欢的thing.并设置了一些样式来满足<i style="color: red">独立性方面</i>的需求.</p>
+	<p>article元素使用的范围</p>
+	<ol>
+		<li>可以嵌套使用: 原文中用一个,然后每次更新或得到的评论再用一个</li>
+		<li>article元素的值与上下文相关</li>
+		<li>article在某种内容中能够带来富有含义的结构,需要作者自行把握.</li>
+	</ol>
+
+	<h2>生成附注栏</h2>
+	<p>aside元素用来表示跟周边内容稍沾一点边的内容,类似于书籍或者杂志中的侧栏.其内容与页面其他文章,article,或者section有点关系.但并非主题内容的一部分.它可能是一些背景信息,到相关文章的链接,等等.</p>
+
+	<div class="item7">
+		
+		<header>
+			<hgroup>
+				<h1>Things I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+			<nav>
+				<h1>Contents</h1>
+				<ul>
+					<li><a href="#fruitsilike2">Fruits I Like</a></li>
+					<li><a href="#activitiesilike2">Activities I Like</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			<header>
+				<hgroup>
+					<h1 id="fruitsilike2">Additional fruits</h1>
+					<h2>How I learned to love Citrus</h2>
+				</hgroup>
+			</header>
+
+			<aside>
+				<h1>Why Fruit is Healthy</h1>
+				<section>
+					Here are three reasons why everyone should eat more furit:
+					<ol>
+						<li>Fruit contains lots of viamins </li>
+						<li>Fruit is a source of fibre</li>
+						<li>Fruit contains few calories</li>
+					</ol>
+				</section>
+			</aside>
+
+			I like apples and oranges.舔狗一词走红之后便被网友们制作成了相关的表情包，受到了大家
+			的热烈欢迎，被大量使用和转载开来。其中比较热门的表情包有“舔狗舔到最后一无所有”“舔狗舔到最后满载而归”“舔狗舔到最后应有尽有”“答应我，别当舔狗了好吗”。“舔狗”是一个比较常见的网络流行语，形容在感情生活中明知道对方不喜欢自己，还一再无底线的讨好对方，最早出现的时间是在 2016 年。有两种用法：一种是形容在两性关系中明知道对方不喜欢自己，还一再地毫无尊严和底线地用热脸去贴冷屁股的人。另外一种是形容毫无原则和底线去溜须拍马、阿谀奉承的人。直到现在变成一种常用的吐槽语被大家所使用。“舔狗”是一个比较常见的网络流行语，形容在感情生活中明知道对方不喜欢自己，还一再无底线的讨好对方，最早出现的时间是在 2016 年。有两种用法：一种是形容在两性关系中明知道对方不喜欢自己，还一再地毫无尊严和底线地用热脸去贴冷屁股的人。另外一种是形容毫无原则和底线去溜须拍马、阿谀奉承的人。直到现在变成一种常用的吐槽语被大家所使用。“舔狗”是一个比较常见的网络流行语，形容在感情生活中明知道对方不喜欢自己，还一再无底线的讨好对方，最早出现的时间是在 2016 年。有两种用法：一种是形容在两性关系中明知道对方不喜欢自己，还一再地毫无尊严和底线地用热脸去贴冷屁股的人。另外一种是形容毫无原则和底线去溜须拍马、阿谀奉承的人。直到现在变成一种常用的吐槽语被大家所使用。
+
+			<section>
+				<h1 id="morefruit">Additional fruits</h1>
+				I also like bananas,mangoes,cherries,apricots,plums,
+				peaches and grapes.
+				<section>
+					<h1>more information</h1>
+					You can see other fruits I like <a href="fruitlist.html">here</a>
+				</section>
+			</section>
+
+			<footer>
+				<nav>
+					more information:
+					<a href="fruit.org">Learn More About Fruit</a>
+				</nav>
+			</footer>
+		</article>
+
+		<article>
+			<header>
+				<hgroup>
+					<h1 id="activitiesilike2">Activities I like</h1>
+					<h2>It hurts,but I keep doing it</h2>
+				</hgroup>
+			</header>
+
+			<section>
+				<p>I like to swim,cycle and run. I am in training for my first
+				triathlon, but it is hard work.</p>	
+				<h1 id="tritypes">Kinds of Triathlon</h1>
+				There are different kinds of triathlon - sprint,Olympic and so on.
+
+				<section>
+					<h1 id="mytri">The kind of triathlon I am aming for</h1>
+					I am aiming for Olympic,which consists of the following
+					<ol>
+						<li>1.5km swim</li>
+						<li>40km cycle</li>
+						<li>10km run</li>
+					</ol>
+				</section>
+			</section>
+
+			<footer>
+				<nav>
+					More information:
+					<a href="triathlon.org">Learn More About Triathlons</a>
+				</nav>
+			</footer>
+		</article>
+
+		<footer id="mainFooter">
+			&#169;2011,Adam Freeman.<a href="http://asdasd.com">Visit Fuck.</a>
+		</footer>
+	</div>
+
+	<h2>提供联系信息</h2>
+	<p>address元素用来表示文档或article元素的联系信息</p>
+	<p>address元素身为article元素的后代元素,提供的联系信息被视为该article的.否则,当address元素身为body元素的子元素时,它提供的联系信息被视为整个文档的.</p>
+	<p>address元素不能用来表示文档或文章的联系信息之外的地址.它不能用在文档内容中表示客户或者用户的地址.</p>
+	<p>示例内容如下</p>
+	<div class="item8">
+		<header>
+			<hgroup>
+				<h1>Things I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+			<address>
+				Questions and comments? <a href="mailto:luoyupiaoshang@gmail.com">Email me</a>
+			</address>
+			<nav>
+				<h1>CONTENTS</h1>
+				<ul>
+					<li><a href="#fruitsilike">Fruits I like</a></li>
+					<li><a href="#activitiesilike">Activities I like</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+
+	<h2>生成详情区域</h2>
+	<p>detail元素在文档中生成一个区域,用户可以展开它以了解关于某主题的更多详情.</p>
+	<p>details元素通常包含一个summary元素,后者的作用是为该详情区域生成一个说明标签或标题.</p>
+
+	<h3>使用summary和details元素</h3>
+	<div class="item9">
+		<header>
+			<hgroup>
+				<h1>Things I like</h1>
+				<h2>By me</h2>
+			</hgroup>
+			<address>
+				Questions and comments? <a href="mailto:luoyupiaoshang@gmail.com">Email me</a>
+			</address>
+		</header>
+
+		<article>
+			<header>
+				<hgroup>
+					<h1 id="activitiesilike">Activities I Like</h1>
+					<h2>It hurts,but I keep doing it</h2>
+				</hgroup>
+			</header>
+			<section>
+				<p>I like to swim,cycle and run. I am in training for my first triathlon,but it is hard work</p>
+				<details>
+					<summary>Kinds of Triathlon</summary>
+					There are different kinds of triathlon - sprint,Olympic and so on.
+					I am aming for Olympic,which consists of the following:
+					<ol>
+						<li>1.5km swim</li>
+						<li>40km cycle</li>
+						<li>10km run</li>
+					</ol>
+				</details>
+			</section>
+		</article>
+
+	</div>
+</body>
+
+</html>

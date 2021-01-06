@@ -1,0 +1,13 @@
+/* 声明样式表字符编码类型 */
+@charset "UTF-8";
+@import "common.css";
+
+.item3 a{
+	color: black;
+}
+
+.item3 span{
+	border: medium black dashed;
+	padding: 10px;
+}
+
